@@ -15,7 +15,8 @@
 
     <style type="text/css">
         /* Hide the fonts while loading */
-        .wf-loading .proxima-nova-alt-reg-12, .wf-loading .proxima-nova-alt-thin-12  { visibility: hidden; }
+        .wf-loading *  { visibility: hidden; }
+        nav, header {display:none;}
     </style>
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -28,52 +29,130 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
 
+ <!-- trash div for 1024 x 768
+  <div style="display:block;position:fixed; height:768px; width:1024px; z-index:999; left:50%; top:50%; margin-left:-512px; margin-top:-384px; border:1px solid #000;"></div>
+ -->
+
   <div id="gradBG"></div>
   <div id="content-wrapper" style="display:none;">
 
-  <header style="display:none;">
-    <nav class="unselectable">
-      <ul >
-        <li id="header-logo"><a href="http://www.thecrpgroup.com/crpweb/promo-site" target="_self"><img src="images/crp-logo.svg"></a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-2">About the CRP</a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-3">Theatrical Work</a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-4">Home Entertainment</a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-5">Interactive Gaming</a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-6">AV and Web</a></li>
-        <li class="proxima-nova-alt-reg-12 page-link"><a href="#page-7">Contact, Etc.</a></li>
+  <header style="" class="nav-button unselectable">
+     <div id="click-area" data-opened="0"><span class="plus unselectable">+</span></div>  
+       <ul id="header-ul">
+        <li class="page-link"><a><img id="header-logo" rel="#page-1" data-page="1" src="images/crp-logo.svg"></a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-2" data-page="2">About the CRP</a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-3" data-page="3">Theatrical Work</a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-4" data-page="4">Home Entertainment</a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-5" data-page="5">Interactive Gaming</a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-6" data-page="6">AV and Web</a></li>
+        <li class="proxima-nova-alt-reg-12 page-link"><a rel="#page-7" data-page="7">Contact, Etc.</a></li>
       </ul>
-    </nav>
   </header>
 
-    <section id="page-1">
-        <img src="images/crp-logo.svg" id="crp-logo" class="unselectable centered" style="">
+
+  <nav id="upDownNav" class="centeredV" >
+    <a id="up-button" class="nav-button" style="display:none;"><img src="images/up-marker.png" width="30"></a>
+    <a id="down-button" class="nav-button" style=""><img src="images/up-marker.png" data-rotate="180" width="30"></a>
+  </nav>
+
+  <nav id="leftRightNav" class="centeredH" style="display:none;">
+    <a id="left-button" class="nav-button" style="display:none;"><img src="images/up-marker.png" data-rotate="270" width="30"></a>
+    <a id="right-button" class="nav-button" style=""><img src="images/up-marker.png" data-rotate="90" width="30"></a>
+  </nav>
+
+    <section id="page-1" class="unselectable current-page">
+        <img src="images/crp-logo.svg" id="crp-logo" class="unselectable centered" style="display:none;">
     </section>
 
     <section id="page-2">
+        <article id="about-frame" class="centered gradient-frame">
+          <div id="about-wrapper">
+            <aside id="about-headline"><h2>The CRP Group is an entertainment design agency located in Burbank, CA.</h2></aside>
+            <div style="clear:left;"></div>          
+            <aside id="about-body-text">
+              <p>We offer an array of services from print to online with a focus on the entertainment industry - including theatrical, home entertainment and interactive gaming. In addition to dynamic creative abilities, our production services are at a level of efficiency and accuracy that is unmatched.</p>
+
+              <p>Our knowledgeable and passionate team is committed to taking the extra steps to provide quality results with highly personalized attention. Much of our success is a result of our team's synergy, created through a shared sense of humor, honesty and respect.</p>
+
+              <p>We are dedicated to establishing more than typical client-vendor relationships — our goal is to create collaborative partnerships where communication is fluid and we work not for you, but with you.</p>
+              <h2>DROP US A LINE. SEE WHAT BLUE CAN DO FOR YOU.</h2>
+             </aside>
+          
+            <aside id="about-images">
+              <img src="http://placehold.it/150x400" style="float:left;">
+              <img src="http://placehold.it/350x195" style="float:right;">
+              <img src="http://placehold.it/350x195" style="float:right; margin-top:10px;">  
+            </aside>
+          </div> <!-- end wrapper -->
+        </article>
     </section>
 
-    <section id="page-3">
+    <section id="page-3" data-which="theatrical-frame">
+        <article id="theatrical-frame-1" class="centered transparent-frame">
+          <h1>Theatrical Work</h1>
+          <hr>
+        </article>
+        <article id="theatrical-frame-2" class="centered transparent-frame">
+          <h1>Theatrical Work</h1>
+          <hr>
+        </article>
+        <article id="theatrical-frame-3" class="centered transparent-frame">
+          <h1>Theatrical Work</h1>
+          <hr>
+        </article>
     </section>
 
-    <section id="page-4">
+    <section id="page-4" data-which="homeEnt-frame">
+        <article id="homeEnt-frame-1" class="centered transparent-frame">
+          <h1>Home Entertainment Work</h1>
+          <hr>
+        </article>
+        <article id="homeEnt-frame-2" class="centered transparent-frame">
+          <h1>Home Entertainment Work</h1>
+          <hr>
+        </article>
+        <article id="homeEnt-frame-3" class="centered transparent-frame">
+          <h1>Home Entertainment Work</h1>
+          <hr>
+        </article>
     </section>
 
-    <section id="page-5">
+    <section id="page-5" data-which="gaming-frame">
+        <article id="gaming-frame-1" class="centered transparent-frame">
+          <h1>Gaming Work</h1>
+          <hr>
+        </article>
+        <article id="gaming-frame-2" class="centered transparent-frame">
+          <h1>Gaming Work</h1>
+          <hr>
+        </article>
+        <article id="gaming-frame-3" class="centered transparent-frame">
+          <h1>Gaming Work</h1>
+          <hr>
+        </article>
     </section>
 
-    <section id="page-6">
+    <section id="page-6" data-which="av-frame">
+        <article id="av-frame-1" class="centered transparent-frame">
+          <h1>AV + Web Work</h1>
+          <hr>
+        </article>
+        <article id="av-frame-2" class="centered transparent-frame">
+          <h1>AV + Web Work</h1>
+          <hr>
+        </article>
     </section>
 
     <section id="page-7">
-        <footer>
-        </footer>
+        <article></article>
+        <footer></footer>
     </section>
-
+-->
   </div> <!-- content-wrapper -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+  <script src="js/vendor/jquery-ui-1.10.2.custom.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
