@@ -1,4 +1,4 @@
-pagePosition = {
+var pagePosition = {
 	leftPos : 1,
 	topPos : 1,
 }
@@ -6,7 +6,6 @@ pagePosition = {
 $(document).ready(function(){ 
 
 	$('#content-wrapper').css('display','block');
-
 	setWinSize();
 	centerItem();
 	setTimeout( function() {
@@ -17,7 +16,6 @@ $(document).ready(function(){
 	},100 );
 
 $(window).resize(function() {
-	if ($(window).height() > 650 && $(window).width() > 1000 ) {
 		setWinSize();
 		centerItem();
 
@@ -40,32 +38,63 @@ $(window).resize(function() {
 		$('html, body').animate({
 				scrollTop: $(newPage).offset().top
 		}, 0);
-	}; // end if
 });
 
 // set each page to be the current window H X W
 function setWinSize(){
-	if ($(window).height() > 650 && $(window).width() > 1000 ) {
+	if ($(window).height() > 650) {
 		var i=0;
 		$('section').each(function(){
 			$(this).css({ 'height' : $(window).height() });
-			$(this).css({ 'width' : $(window).width() });	
 			$(this).css({ 'top' : i });
 			i += $(window).height();
 		});
-   } else {
+   } else if($(window).height() <= 650) {
    		var i=0;
 		$('section').each(function(){
 			$(this).css({ 'height' : 650 });
-			$(this).css({ 'width' : 1000 });	
 			$(this).css({ 'top' : i });
 			i += 650;
 		});
    }
+   if ($(window).width() > 1200) {
+   	$('section').each(function() {
+   		$(this).css({ 'width' : $(window).width() });	
+	});
+   } else {	
+	$('section').each(function() {
+		$(this).css({ 'width' : 1200 });
+    });
+   };	
 };
 
+// center shit
+function centerItem() {
+	$('.centered').each(function() {
+	  var itemH =  $(this).height(),
+ 	      itemW =  $(this).width();	
+	  $(this).css({ 'top' : ($(window).height() / 2) - (itemH / 2)  });
+	  $(this).css({ 'left' : ($(window).width() / 2) - (itemW / 2)  });
+	});
+
+	$('.centeredV').each(function() {
+	  var itemH =  $(this).height();
+	  $(this).css({ 'top' : ($(window).height() / 2) - (itemH / 2)  });
+	});
+
+	$('.centeredH').each(function() {
+	  var itemW =  $(this).width();	
+	  $(this).css({ 'left' : ($(window).width() / 2) - (itemW / 2)  });
+	});
+	if ($(window).height() > 668) {
+		$('#about-wrapper').css({ 'top' : ( (($(window).height() * .8) / 2) - 250) });
+	} else {
+		$('#about-wrapper').css({ 'top' : 20 });		
+	}
+};
+
+// reset any horizontal pages
 function resetHor() {
-	// reset any horizontal pages
 	if ($('.current-page').data('which') && pagePosition.leftPos > 1 ) {
 		var i = $('.current-page').children().length,
 				curSection = $('.current-page').data('which'),
@@ -114,12 +143,9 @@ $('.page-link').click(function(event) {
 	};
 });
 
-
 //up ad down buttons move page
 $('#down-button').click(function() {
-
 	resetHor();
-
 	$('.current-page').removeClass('current-page');
 	if (pagePosition.topPos !== 7) {
 		pagePosition.topPos += 1;
@@ -142,7 +168,6 @@ $('#down-button').click(function() {
 });
 
 $('#up-button').click(function() {
-
 	resetHor();
 	$('.current-page').removeClass('current-page');
 	if (pagePosition.topPos !== 1 ) {
@@ -214,45 +239,6 @@ $('#right-button').click(function() {
   };
 });
 
-// center shit
-function centerItem() {
-	if ($(window).height() > 650 && $(window).width() > 1000 ) {
-		$('.centered').each(function() {
-		  var itemH =  $(this).height(),
-	 	      itemW =  $(this).width();	
-		  $(this).css({ 'top' : ($(window).height() / 2) - (itemH / 2)  });
-		  $(this).css({ 'left' : ($(window).width() / 2) - (itemW / 2)  });
-		});
-
-		$('.centeredV').each(function() {
-		  var itemH =  $(this).height();
-		  $(this).css({ 'top' : ($(window).height() / 2) - (itemH / 2)  });
-		});
-
-		$('.centeredH').each(function() {
-		  var itemW =  $(this).width();	
-		  $(this).css({ 'left' : ($(window).width() / 2) - (itemW / 2)  });
-		});
-	} else {
-		$('.centered').each(function() {
-		  var itemH =  $(this).height(),
-	 	      itemW =  $(this).width();	
-		  $(this).css({ 'top' : (325) - (itemH / 2)  });
-		  $(this).css({ 'left' : (500) - (itemW / 2)  });
-		});
-
-		$('.centeredV').each(function() {
-		  var itemH =  $(this).height();
-		  $(this).css({ 'top' : (325) - (itemH / 2)  });
-		});
-
-		$('.centeredH').each(function() {
-		  var itemW =  $(this).width();	
-		  $(this).css({ 'left' : (500) - (itemW / 2)  });
-		});
-	} // end if
-};
-
 // Animate header
 $('#click-area').click(function() {
   var opened = $('#click-area').data('opened'),
@@ -288,10 +274,6 @@ $('[data-rotate!=""]').each(function() {
 		$(this).css( '-moz-transform', 'rotate('+ deg + 'deg)' )
 		$(this).css( '-webkit-transform', 'rotate('+ deg + 'deg)' )
 });
-
-
-
-
 
 // read arrow key presses
 //    left = 37 up = 38 right = 39 down = 40
