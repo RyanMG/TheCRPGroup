@@ -23,7 +23,7 @@ img { vertical-align: middle; }
 h1 { font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 600; font-size: 60px; color:#AAA; margin:0px; padding: 15px 0px 0px 35px; text-transform: uppercase; letter-spacing: 2px; line-height: 45px;}
 h2 { font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 100; font-size: 27px; color:#777; line-height: 30px; margin:0px; padding:0px; text-transform: uppercase; letter-spacing: 3px; }
 p { font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 100; font-size: 17px; color:#000; line-height: 21px; padding: 0px; margin:0px;}
-p:after{ content: ""; display:block; padding-bottom:15px; }
+
 .proxima-nova-alt-thin-12 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 100; font-size: 12px; color:#fff; }
 .proxima-nova-alt-reg-12 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 400; font-size: 12px; color:#fff;  }
 
@@ -63,7 +63,6 @@ img#header-logo { height:25px;}
 	background: radial-gradient(ellipse at center,  #ffffff 0%,#ffffff 64%,#b8b8b8 99%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c0d1d0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.transparent-frame { position:absolute; width:85%; height:85%; z-index:25; }
 
 section#page-1 { position:absolute; z-index:1; top:0px; left:0px; width:100%; height:100%; }
 #crp-logo { width: 55%; position:relative; margin:0 auto; padding:0px;}
@@ -74,33 +73,37 @@ section#page-2 { position:absolute; height:100%; width:100%; }
 #about-wrapper { height:500px; width: 950px; margin:0 auto; overflow:hidden; position:relative; }
 aside#about-headline { position:relative; float:left; width:910px; height:65px; left:0px; top:0px; padding-bottom:10px;}
 aside#about-body-text { position:relative; float:left; height:400px; width: 425px; left:0px; }
+aside#about-body-text p:after{ content: ""; display:block; padding-bottom:15px; }
 aside#about-images { position:relative; float:right; width:510px; height: 400px; right:0px;  }
 
-.work-frame-wrapper { border:1px solid #f00; height:85%; width:99%; margin-top:10px; margin-left: auto; margin-right:auto;}
-.work-frame-wrapper img {margin:10px; border:3px solid #fff; -webkit-transition: all 200ms linear;
-    -moz-transition: all 200ms linear;
-    -o-transition: all 200ms linear;
-    transition: all 200ms linear;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92);
-	-moz-box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92);
-	box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92); }
-.work-frame-wrapper img:hover  { -webkit-transform: scale(1.1) translateZ(0);
--moz-transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
--webkit-transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
--o-transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
--ms-transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-    -webkit-box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82);
-	-moz-box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82);
-	box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82); }
+.transparent-frame { position:absolute; width:75%; height:70%; z-index:25;  }
+.transparent-frame div { border:3px solid #bbb; opacity:.6; overflow:hidden; -webkit-transition: all 300ms linear; -moz-transition: all 300ms linear; -o-transition: all 300ms linear; transition: all 300ms linear;
+    -webkit-transform: translateZ(0); -moz-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0);
+    -webkit-box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92);	-moz-box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92); box-shadow: 0px 5px 3px rgba(50, 50, 50, 0.92); }
+.transparent-frame div:hover  {border:3px solid #fff; opacity:1; cursor:pointer;
+	-moz-transform: scale(1.03); -webkit-transform: scale(1.03); -o-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03);
+    -webkit-box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82); -moz-box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82); box-shadow: 0px 7px 6px rgba(50, 50, 50, 0.82); }
+
+.deadcenter { background-position: center center; background-image: no-repeat; background-size: cover; position:absolute; }
+.small-square { height:48%; width:24%;}
+.short-wide { height:48%; width:50%; }
+.tall-narrow {height: 100%; width: 23%;}
+span.popup { position:absolute; z-index:100; bottom:-50px; width:100%; height:40px; border-top:2px solid #777; opacity: .8;
+background: rgb(155,155,155); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(155,155,155,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 86%, rgba(155,155,155,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(155,155,155,1)), color-stop(15%,rgba(255,255,255,1)), color-stop(86%,rgba(255,255,255,1)), color-stop(100%,rgba(155,155,155,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(155,155,155,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 86%,rgba(155,155,155,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(155,155,155,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 86%,rgba(155,155,155,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(155,155,155,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 86%,rgba(155,155,155,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(155,155,155,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 86%,rgba(155,155,155,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b9b9b', endColorstr='#9b9b9b',GradientType=0 ); /* IE6-9 */
+
+ }
+span.popup p  {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 600; font-size: 9px; color:#666; line-height: 12px; padding: 5px 0 0 6px; }
 
 /* theatrical page */
 section#page-3 { position:absolute; height:100%; width:100%; }
-article#theatrical-frame-1 { margin-left:0px; overflow: hidden; }
+article#theatrical-frame-1 { margin-left:0px; }
 article#theatrical-frame-2 { margin-left: 100%; overflow: hidden; }
 article#theatrical-frame-3 { margin-left: 200%; overflow: hidden; }
 

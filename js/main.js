@@ -275,6 +275,9 @@ $('[data-rotate!=""]').each(function() {
 		$(this).css( '-webkit-transform', 'rotate('+ deg + 'deg)' )
 });
 
+$('.deadcenter').mouseover(function() {	$(this).children().stop().animate({	bottom: '0px' }, 350) });
+$('.deadcenter').mouseleave(function() { $(this).children().stop().animate({ bottom: '-50px' }, 350) });
+
 // read arrow key presses
 //    left = 37 up = 38 right = 39 down = 40
 //document.onkeydown = function(evt) {
