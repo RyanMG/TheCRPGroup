@@ -54,12 +54,12 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 
 #page-1-wrapper {
     width:1024px;
-    height:403px;
+    height:413px;
     position:absolute;
     left:50%;
     top:50%;
     margin-left:-512px;
-    margin-top:-220px;
+    margin-top:-230px;
 }
 
 #crp-logo { padding: 0; margin: 0; width: 675px; margin:0 0 0 165px; }
@@ -70,7 +70,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     display:inline-block;
     white-space: nowrap;
     margin-right:10px;
-    height:210px;
+    height:220px;
     width:318px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -80,7 +80,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 #page-1-theatrical { border:7px solid #1c4c81; border-bottom:0px; }
 #page-1-homeEnt { border: 7px solid #184f55; border-bottom:0px;}
 #page-1-gaming { margin-right:0px; border: 7px solid #3b3e7c; border-bottom:0px; }
-.gradient-strip { height:40px; width:325px; border:0px; margin:0px; padding:0px; position: absolute; bottom:0px; }
+.gradient-strip { height:30px; width:325px; border:0px; margin:0px; padding:0px; position: absolute; bottom:0px; }
 
 .theatrical {
     background: #1c4c81; /* Old browsers */
