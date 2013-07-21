@@ -28,7 +28,7 @@ p { padding: 0px; margin:0px;}
     font-style: normal;
     font-weight: 100;
     font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color:#bbb;
     margin:0px;
     padding:0px;
@@ -37,6 +37,7 @@ p { padding: 0px; margin:0px;}
 .proxima-nova-alt-thin-18 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; color:#aaa; }
 .proxima-nova-alt-reg-18 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 400; font-size: 18px; line-height:22px; color:#fff; }
 .proxima-nova-alt-bold-18 { font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 600; font-size: 18px; color:#444; }
+.addy { position:absolute; bottom:20px; width:555px; left:50%; margin-left:-284px; }
 
 /* TOP NAV BAR */
 nav {width: 100%; height:40px; background:#fff; border-bottom:2px solid #ddd; position:fixed; top:0px; z-index:10;}
@@ -50,22 +51,69 @@ li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:poin
 section {clear:left; float:left; position: relative;}
 
 section#page-1 { z-index:1; width:100%; height:700px; }
-#page-1-wrapper {width:1024px; height:400px; position:absolute; left:50%; top:50%; margin-left:-512px; margin-top:-190px;}
-#crp-logo { padding: 0; margin: 0; width: 650px; margin:0 0 0 175px; }
 
-#page-1-block {height:185px; width:100%; margin-top:80px;}
+#page-1-wrapper {
+    width:1024px;
+    height:403px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-512px;
+    margin-top:-220px;
+}
+
+#crp-logo { padding: 0; margin: 0; width: 675px; margin:0 0 0 165px; }
+
+#page-1-block {height:190px; width:100%; margin-top:90px;}
 
 #page-1-theatrical, #page-1-homeEnt, #page-1-gaming {
     display:inline-block;
     white-space: nowrap;
     margin-right:10px;
-    height:217px;
-    width:332px;
+    height:210px;
+    width:318px;
     background-position: center center;
     background-repeat: no-repeat;
     box-shadow:0px 2px 7px #000;
 }
-#page-1-gaming { margin-right:0px;}
+
+#page-1-theatrical { border:7px solid #1c4c81; border-bottom:0px; }
+#page-1-homeEnt { border: 7px solid #184f55; border-bottom:0px;}
+#page-1-gaming { margin-right:0px; border: 7px solid #3b3e7c; border-bottom:0px; }
+.gradient-strip { height:40px; width:325px; border:0px; margin:0px; padding:0px; position: absolute; bottom:0px; }
+
+.theatrical {
+    background: #1c4c81; /* Old browsers */
+    background: -moz-linear-gradient(left, #1c4c81 0%, #256cbd 49%, #1c4c81 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1c4c81), color-stop(49%,#256cbd), color-stop(100%,#1c4c81)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #1c4c81 0%,#256cbd 49%,#1c4c81 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #1c4c81 0%,#256cbd 49%,#1c4c81 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #1c4c81 0%,#256cbd 49%,#1c4c81 100%); /* IE10+ */
+    background: linear-gradient(to right, #1c4c81 0%,#256cbd 49%,#1c4c81 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c4c81', endColorstr='#1c4c81',GradientType=1 ); /* IE6-9 */
+}
+
+.homeEnt {
+    background: #1c4c81; /* Old browsers */
+    background: -moz-linear-gradient(left, #184f55 0%, #136f6b 49%, #184f55 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#184f55), color-stop(49%,#136f6b), color-stop(100%,#184f55)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #184f55 0%,#136f6b 49%,#184f55 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #184f55 0%,#136f6b 49%,#184f55 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #184f55 0%,#136f6b 49%,#184f55 100%); /* IE10+ */
+    background: linear-gradient(to right, #184f55 0%,#136f6b 49%,#184f55 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c4c81', endColorstr='#1c4c81',GradientType=1 ); /* IE6-9 */
+}
+
+.gaming {
+    background: #3b3e7c; /* Old browsers */
+    background: -moz-linear-gradient(left, #3b3e7c 0%, #5f489e 49%, #3b3e7c 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#3b3e7c), color-stop(49%,#5f489e), color-stop(100%,#3b3e7c)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #3b3e7c 0%,#5f489e 49%,#3b3e7c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #3b3e7c 0%,#5f489e 49%,#3b3e7c 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #3b3e7c 0%,#5f489e 49%,#3b3e7c 100%); /* IE10+ */
+    background: linear-gradient(to right, #3b3e7c 0%,#5f489e 49%,#3b3e7c 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3e7c', endColorstr='#3b3e7c',GradientType=1 ); /* IE6-9 */
+}
 
 /* contact page */
 section#page-7 { height:350px; width:100%; overflow:hidden; background-color: #fff; -webkit-box-shadow: 0 -2px 7px #0e2d54; box-shadow: 0 -2px 7px #0e2d54; z-index:5;}
