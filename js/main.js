@@ -12,6 +12,13 @@ $(document).ready(function(){
 		}, 1000, 'easeOutCubic');
 	}); // page link
 
+	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming', function(){
+		$('html, body').animate({
+			scrollTop: $('#portfolio').offset().top
+		}, 1000, 'easeOutCubic');
+	});
+
+
 });// doc ready
 
 $(window).scroll(function(){

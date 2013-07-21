@@ -28,22 +28,45 @@ p { padding: 0px; margin:0px;}
     font-style: normal;
     font-weight: 100;
     font-size: 11px;
-    letter-spacing: 1.5px;
-    color:#bbb;
+    letter-spacing: 1.8px;
+    color:#ddd;
     margin:0px;
     padding:0px;
 }
+.proxima-nova-alt-reg-22 {
+    font-family: "proxima-nova-alt",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height:22px;
+    color:#fff;
+}
 
-.proxima-nova-alt-thin-18 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; color:#aaa; }
-.proxima-nova-alt-reg-18 {font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 400; font-size: 18px; line-height:22px; color:#fff; }
-.proxima-nova-alt-bold-18 { font-family: "proxima-nova-alt",sans-serif; font-style: normal; font-weight: 600; font-size: 18px; color:#444; }
-.addy { position:absolute; bottom:20px; width:555px; left:50%; margin-left:-284px; }
+.proxima-nova-alt-reg-16 {
+    font-family: "proxima-nova-alt",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:18px;
+    color:#fff;
+}
+
+.proxima-nova-alt-bold-20 {
+    font-family: "proxima-nova-alt",sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height:23px;
+    color:#fff;
+}
+.addy { position:absolute; width:598px; left:50%; margin-left:-299px; white-space: pre; cursor: default; }
 
 /* TOP NAV BAR */
-nav {width: 100%; height:40px; background:#fff; border-bottom:2px solid #ddd; position:fixed; top:0px; z-index:10;}
-ul#nav-icon-list {list-style:none; width:889px; margin:10px auto; padding:0px;}
-li.nav-icon { list-style:none; display:inline-block; padding-right:30px; font-size:15px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c;}
+nav {width: 100%; height:50px; background:#fff; position:relative; z-index:10;}
+ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
+li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
+#nav-crp-logo { float:left; height:26px; margin:0px; padding:4px 0 0 0; }
 
 /* PAGES */
 #content-wrapper { }
@@ -67,6 +90,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 #page-1-block {height:190px; width:100%; margin-top:90px;}
 
 #page-1-theatrical, #page-1-homeEnt, #page-1-gaming {
+    cursor:pointer;
     display:inline-block;
     white-space: nowrap;
     margin-right:10px;
@@ -115,12 +139,42 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3e7c', endColorstr='#3b3e7c',GradientType=1 ); /* IE6-9 */
 }
 
+section#portfolio { z-index:0; width:100%; height:1000px;}
+
 /* contact page */
-section#page-7 { height:350px; width:100%; overflow:hidden; background-color: #fff; -webkit-box-shadow: 0 -2px 7px #0e2d54; box-shadow: 0 -2px 7px #0e2d54; z-index:5;}
+section#about-us { height:550px; width:100%; overflow:hidden; }
+h2 {
+    font-family: "proxima-nova-alt",sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 8px;
+    color:#444;
+    height:35px;
+    padding-top:20px;
+    text-align: center;
+    width:100%;
+    background-color: #fff;
+    position:relative;
+    z-index:5; 
+    color:#7597b3;
+}
+
 footer {position:relative; height:100%; width:1024px; margin: 0 auto; }
-#contact-icons { width:668px; height:160px; margin:0 auto; }
-.contact-png { height:110px; width:110px; margin:15px auto; padding:0px 10px 0 10px; position:relative; display:inline-block; background-repeat: no-repeat; background-position:center top; }
-.contact-png:hover { background-position: center -110px; }
+footer > img { margin-right:30px; float:left; border:2px solid #fff;}
+.about-us-text {clear:right; float:right; width:495px; color:#ddd; padding:0px; margin:0px; letter-spacing: 1.8px;}
+#contact-icons { width:442px; height:100px; margin:0 auto 0 auto; clear:both; padding-top:45px;}
+.contact-png {
+    height:65px;
+    width:65px;
+    margin:10px 10px;
+    position:relative;
+    display:inline-block;
+    background-repeat: no-repeat;
+    background-position:center top;
+}
+
+.contact-png:hover { background-position: center -65px; }
 
 @media screen and (max-width: 1024px) {
     body {display:none;}
