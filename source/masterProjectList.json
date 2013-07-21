@@ -1,0 +1,84 @@
+[
+
+	{ 
+		"title": "Beetlejuice: The Complete Series",
+		"client": "Shout! Factory",
+		"scope": "Design and Producion",
+		"projectType": "Home Entertainment",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-he/beetlejuice.jpg",
+		"fullImg": "../images/gallery-he/beelejuice-full.jpg"
+	},
+	{ 
+		"title": "Galaxy Quest: Deluxe Edition",
+		"client": "Paramount Home Entertainment",
+		"scope": "Design",
+		"projectType": "Home Entertainment",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-he/galaxyquest.jpg",
+		"fullImg": "../images/gallery-he/galaxyquest-full.jpg"
+	},
+	{ 
+		"title": "42",
+		"client": "WArner Brothers",
+		"scope": "Producion",
+		"projectType": "Theatrical",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-th/42.jpg",
+		"fullImg": "../images/gallery-th/42-full.jpg"
+	},
+	{ 
+		"title": "The Campaign",
+		"client": "Warner Brothers",
+		"scope": "Producion",
+		"projectType": "Theatrical",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-th/campaign.jpg",
+		"fullImg": "../images/gallery-th/campaign-full.jpg"
+	},
+	{ 
+		"title": "The Hobbit: And Unexpected Journey",
+		"client": "Warner Brothers",
+		"scope": "Producion",
+		"projectType": "Theatrical",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-th/hobbit.jpg",
+		"fullImg": "../images/gallery-th/hobbit-full.jpg"
+	},
+	{ 
+		"title": "Harry Potter 7 Part II",
+		"client": "Warner Brothers",
+		"scope": "Producion",
+		"projectType": "Theatrical",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-th/hp72.jpg",
+		"fullImg": "../images/gallery-th/hp72-full.jpg"
+	},
+	{ 
+		"title": "Jack the Gaint Killer",
+		"client": "Warner Brothers",
+		"scope": "Producion",
+		"projectType": "Theatrical",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-th/jack.jpg",
+		"fullImg": "../images/gallery-th/jack-full.jpg"
+	},
+	{ 
+		"title": "Final Fantasy XIII-2",
+		"client": "Square Enix",
+		"scope": "Design and Production",
+		"projectType": "Interactive Gaming",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-gam/ffxiii-2.jpg",
+		"fullImg": "../images/gallery-gam/ffxiii-2-full.jpg"
+	},
+	{ 
+		"title": "Metal Gear Rising: Revengeance",
+		"client": "Konami",
+		"scope": "Audio / Visual",
+		"projectType": "Interactive Gaming",
+		"description": "Blah blah blah",
+		"mainImg": "../images/gallery-gam/mgrr.jpg",
+		"fullImg": "../images/gallery-gam/mgrr-full.jpg"
+	}
+]

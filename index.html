@@ -34,14 +34,14 @@
         <div id="page-1-wrapper">
           <img src="images/crp-logo.svg" id="crp-logo" >
           <div id="page-1-block">
-              <div id="page-1-theatrical" style="background-image:url('http://placehold.it/318x220')">
-                <div class="gradient-strip theatrical" ></div>
+              <div id="page-1-theatrical" class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+                <div class="gradient-strip theatrical" style="height:15px; margin-top:195px;" ></div>
               </div>
-              <div id="page-1-homeEnt" style="background-image:url('http://placehold.it/318x220')">
-                <div class="gradient-strip homeEnt"></div>              
+              <div id="page-1-homeEnt" class="homeEnt-box" style="background-image:url('http://placehold.it/318x220')">
+                <div class="gradient-strip homeEnt" style="height:15px; margin-top:195px;"></div>              
               </div>
-              <div id="page-1-gaming" style="background-image:url('http://placehold.it/318x220')">
-                <div class="gradient-strip gaming"></div>                
+              <div id="page-1-gaming" class="gaming-box" style="background-image:url('http://placehold.it/318x220'); margin-right:0px;">
+                <div class="gradient-strip gaming" style="height:15px; margin-top:195px;"></div>                
               </div>
           </div>
         </div>
@@ -51,14 +51,15 @@
 
       <section id="portfolio" class="unselectable">
 
-  <nav> 
-    <ul id="nav-icon-list">
-      <img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1">
-      <li class="nav-icon proxima-nova-alt-reg-22" rel="#about-us">ABOUT US</li>
-      <li class="nav-icon proxima-nova-alt-reg-22" rel="#portfolio">PORTFOLIO</li>
-    </ul>
-  </nav>
+      <nav> 
+        <ul id="nav-icon-list">
+          <img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1">
+          <li class="nav-icon proxima-nova-alt-reg-22" rel="#about-us">ABOUT US</li>
+          <li class="nav-icon proxima-nova-alt-reg-22" rel="#portfolio">PORTFOLIO</li>
+        </ul>
+      </nav>
 
+      <div id="projectList"></div>
       </section>
 
 
@@ -83,9 +84,27 @@
  
   </div> <!-- end wrapper -->
 
+    <script id="theatricalProjectTemplate" type="text/template">
+      <div class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+          <div class="gradient-strip theatrical" ><%= projectType %></div>
+      </div>
+    </script>
+    <script id="homeEntProjectTemplate" type="text/template">
+      <div class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+          <div class="gradient-strip theatrical" ><%= projectType %></div>
+      </div>
+    </script>
+    <script id="gamingProjectTemplate" type="text/template">
+      <div class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+          <div class="gradient-strip theatrical" ><%= projectType %></div>
+      </div>
+    </script>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
+  <script src="http://backbonejs.org/backbone.js"></script>
   <script src="js/main.js"></script>
 
   <!-- serve fonts last, since it takes a god awful amount of time --> 

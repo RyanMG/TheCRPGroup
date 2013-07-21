@@ -64,7 +64,7 @@ p { padding: 0px; margin:0px;}
 /* TOP NAV BAR */
 nav {width: 100%; height:50px; background:#fff; position:relative; z-index:10;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
-li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c;}
+li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
 #nav-crp-logo { float:left; height:26px; margin:0px; padding:4px 0 0 0; }
 
@@ -89,7 +89,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 
 #page-1-block {height:190px; width:100%; margin-top:90px;}
 
-#page-1-theatrical, #page-1-homeEnt, #page-1-gaming {
+.theatrical-box, .homeEnt-box, .gaming-box {
     cursor:pointer;
     display:inline-block;
     white-space: nowrap;
@@ -101,10 +101,24 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     box-shadow:0px 2px 7px #000;
 }
 
-#page-1-theatrical { border:7px solid #1c4c81; border-bottom:0px; }
-#page-1-homeEnt { border: 7px solid #184f55; border-bottom:0px;}
-#page-1-gaming { margin-right:0px; border: 7px solid #3b3e7c; border-bottom:0px; }
-.gradient-strip { height:30px; width:325px; border:0px; margin:0px; padding:0px; position: absolute; bottom:0px; }
+.theatrical-box { border:7px solid #1c4c81; border-bottom:0px; }
+.homeEnt-box { border: 7px solid #184f55; border-bottom:0px;}
+.gaming-box { border: 7px solid #3b3e7c; border-bottom:0px; }
+.gradient-strip {
+    height:30px;
+    width:325px;
+    border:0px;
+    margin:0px;
+    padding:0px;
+    position: relative;
+    margin-top:180px;
+    font-size:16px;
+    text-align:center;
+    color:#7597b3;
+    padding-top:10px;
+    letter-spacing: 3px;
+    font-style: italic;
+}
 
 .theatrical {
     background: #1c4c81; /* Old browsers */
@@ -139,7 +153,17 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3e7c', endColorstr='#3b3e7c',GradientType=1 ); /* IE6-9 */
 }
 
-section#portfolio { z-index:0; width:100%; height:1000px;}
+section#portfolio { z-index:0; width:100%; height:100%;}
+#projectList { width:1024px; margin:40px auto;}
+/* BACK BONE CLASS */
+.project-wrap {
+    height:220px;
+    width:318px;
+    float:left;
+    margin:15px 28px 15px 0;
+}
+.project-wrap:nth-child(3n+3) {margin-right:0px;}
+
 
 /* contact page */
 section#about-us { height:550px; width:100%; overflow:hidden; }
