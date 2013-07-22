@@ -3,6 +3,7 @@ $(document).ready(function(){
   $('#content-wrapper').css('display','block');
 
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 
 	// UI click to scroll to
 	$('nav').on('click', '.nav-icon', function(event) {
@@ -110,10 +111,7 @@ function pageOneCycle(data) {
 	$('#page-1-gaming > img').attr('src', gamingArray[0]);
 
 	setInterval(function(){
-		console.log(theatPos + " = " + theatArray[theatPos]);
-		
 		(theatPos < (theatArray.length-1)) ? theatPos+=1 : theatPos = 0;
-		
 		$('#page-1-theatrical > img').fadeOut('slow', function(){
 			$(this).attr('src', theatArray[theatPos]).fadeIn('slow');	
 		})
@@ -136,4 +134,7 @@ $(window).scroll(function(){
 
 $(window).resize(function() {
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 });
+
+
