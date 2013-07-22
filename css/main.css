@@ -71,7 +71,7 @@ p { padding: 0px; margin:0px;}
 .addy { position:absolute; width:598px; left:50%; margin-left:-299px; white-space: pre; cursor: default; }
 
 /* TOP NAV BAR */
-nav {width: 100%; height:50px; background:#fff; position:relative; z-index:10;}
+nav {width: 100%; height:50px; background:#fff; position:absolute; z-index:10;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
 li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
@@ -120,11 +120,11 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     margin:0px;
     padding:0px;
     position: relative;
-    margin-top:180px;
+    margin-top:177px;
     font-size:16px;
     text-align:center;
     color:#7597b3;
-    padding-top:10px;
+    padding-top:13px;
     letter-spacing: 3px;
     font-style: italic;
 }
@@ -163,7 +163,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 }
 
 section#portfolio { z-index:0; width:100%; height:100%;}
-#projectList { width:1024px; margin:40px auto;}
+#projectList { width:1024px; margin-top:40px; margin-left: auto; margin-right:auto;}
 /* BACK BONE CLASS */
 .project-wrap {
     height:220px;
