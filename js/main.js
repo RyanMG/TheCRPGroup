@@ -110,13 +110,11 @@ function pageOneCycle(data) {
 	$('#page-1-gaming > img').attr('src', gamingArray[0]);
 
 	setInterval(function(){
-		console.log(theatPos + " = " + theatArray[theatPos]);
-		
 		(theatPos < (theatArray.length-1)) ? theatPos+=1 : theatPos = 0;
-		
-		$('#page-1-theatrical > img').fadeOut('slow', function(){
-			$(this).attr('src', theatArray[theatPos]).fadeIn('slow');	
-		})
+		$('#page-1-theatrical').append("<img src='" + theatArray[theatPos] + "' class='project-img' style='display:none'>");
+		$('#page-1-theatrical img:last-child').fadeIn(1500, function(){
+			$('#page-1-theatrical img:first').remove();
+		});
 	}, 3000);
 }
 
