@@ -44,7 +44,7 @@ $(document).ready(function(){
 	  var ProjectView = Backbone.View.extend({
 	    tagName: "div",
 	    className: "project-wrap",
-	    template: _.template($(this.options.templateType).html()),
+	    template: _.template($('#theatricalProjectTemplate').html()),
 
 	    render: function() {
 	      this.$el.html(this.template(this.model.toJSON()));
@@ -65,7 +65,7 @@ $(document).ready(function(){
 	      }, this);
 	    },
 	    renderItem: function(project) {
-	      var projectView = new ProjectView({model: project, templateType: "#theatricalProjectTemplate"});
+	      var projectView = new ProjectView({model: project });
 	      this.$el.append(projectView.render().el);
 	    }
 	  });
