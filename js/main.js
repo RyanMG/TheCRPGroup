@@ -1,88 +1,3 @@
-var masterList = [
-
-	{ 
-		"title": "Beetlejuice: The Complete Series",
-		"client": "Shout! Factory",
-		"scope": "Design and Producion",
-		"projectType": "Home Entertainment",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-he/beetlejuice.jpg",
-		"fullImg": "../images/gallery-he/beelejuice-full.jpg"
-	},
-	{ 
-		"title": "Galaxy Quest: Deluxe Edition",
-		"client": "Paramount Home Entertainment",
-		"scope": "Design",
-		"projectType": "Home Entertainment",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-he/galaxyquest.jpg",
-		"fullImg": "../images/gallery-he/galaxyquest-full.jpg"
-	},
-	{ 
-		"title": "42",
-		"client": "WArner Brothers",
-		"scope": "Producion",
-		"projectType": "Theatrical",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/42.jpg",
-		"fullImg": "../images/gallery-th/42-full.jpg"
-	},
-	{ 
-		"title": "The Campaign",
-		"client": "Warner Brothers",
-		"scope": "Producion",
-		"projectType": "Theatrical",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/campaign.jpg",
-		"fullImg": "../images/gallery-th/campaign-full.jpg"
-	},
-	{ 
-		"title": "The Hobbit: And Unexpected Journey",
-		"client": "Warner Brothers",
-		"scope": "Producion",
-		"projectType": "Theatrical",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/hobbit.jpg",
-		"fullImg": "../images/gallery-th/hobbit-full.jpg"
-	},
-	{ 
-		"title": "Harry Potter 7 Part II",
-		"client": "Warner Brothers",
-		"scope": "Producion",
-		"projectType": "Theatrical",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/hp72.jpg",
-		"fullImg": "../images/gallery-th/hp72-full.jpg"
-	},
-	{ 
-		"title": "Jack the Gaint Killer",
-		"client": "Warner Brothers",
-		"scope": "Producion",
-		"projectType": "Theatrical",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/jack.jpg",
-		"fullImg": "../images/gallery-th/jack-full.jpg"
-	},
-	{ 
-		"title": "Final Fantasy XIII-2",
-		"client": "Square Enix",
-		"scope": "Design and Production",
-		"projectType": "Interactive Gaming",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-gam/ffxiii-2.jpg",
-		"fullImg": "../images/gallery-gam/ffxiii-2-full.jpg"
-	},
-	{ 
-		"title": "Metal Gear Rising: Revengeance",
-		"client": "Konami",
-		"scope": "Audio / Visual",
-		"projectType": "Interactive Gaming",
-		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-gam/mgrr.jpg",
-		"fullImg": "../images/gallery-gam/mgrr-full.jpg"
-	}
-];
-
 $(document).ready(function(){ 
 
   $('#content-wrapper').css('display','block');
@@ -173,7 +88,9 @@ $(document).ready(function(){
 });// doc ready
 
 function pageOneCycle(data) {
-	var theatArray = [], homeEntArray = [], gamingArray = [];
+	var theatArray = [], homeEntArray = [], gamingArray = [],
+		theatPos = 1, homeEntPos = 1, gamingPos = 1;
+
 	_.each(data, function(proj){
 		switch (proj.projectType) {
 			case "Theatrical":
@@ -187,6 +104,13 @@ function pageOneCycle(data) {
 				break;	
 		}
 	});
+	$('#page-1-theatrical').css({'background-image': 'url(' + theatArray[0] + ')'});
+	$('#page-1-homeEnt').css({'background-image': "url('" + homeEntArray[0] + "')" });
+	$('#page-1-gaming').css({'background-image': "url('" + gamingArray[0] + "')" });
+	setInterval(function(){
+					
+	}, 3000);
+
 }
 
 $(window).scroll(function(){
@@ -201,7 +125,6 @@ $(window).scroll(function(){
 		$('nav').css({position:'relative'});
  		$('#projectList').css({marginTop: '40px'});
 	}
-
 });
 
 $(window).resize(function() {

@@ -6,8 +6,8 @@
 		"scope": "Design and Producion",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-he/beetlejuice.jpg",
-		"fullImg": "../images/gallery-he/beelejuice-full.jpg"
+		"mainImg": "images/gallery-he/beetlejuice.jpg",
+		"fullImg": "images/gallery-he/beelejuice-full.jpg"
 	},
 	{ 
 		"title": "Galaxy Quest: Deluxe Edition",
@@ -15,8 +15,8 @@
 		"scope": "Design",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-he/galaxyquest.jpg",
-		"fullImg": "../images/gallery-he/galaxyquest-full.jpg"
+		"mainImg": "images/gallery-he/galaxyquest.jpg",
+		"fullImg": "images/gallery-he/galaxyquest-full.jpg"
 	},
 	{ 
 		"title": "42",
@@ -24,8 +24,8 @@
 		"scope": "Producion",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/42.jpg",
-		"fullImg": "../images/gallery-th/42-full.jpg"
+		"mainImg": "images/gallery-th/42.jpg",
+		"fullImg": "images/gallery-th/42-full.jpg"
 	},
 	{ 
 		"title": "The Campaign",
@@ -33,8 +33,8 @@
 		"scope": "Producion",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/campaign.jpg",
-		"fullImg": "../images/gallery-th/campaign-full.jpg"
+		"mainImg": "images/gallery-th/campaign.jpg",
+		"fullImg": "images/gallery-th/campaign-full.jpg"
 	},
 	{ 
 		"title": "The Hobbit: And Unexpected Journey",
@@ -42,8 +42,8 @@
 		"scope": "Producion",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/hobbit.jpg",
-		"fullImg": "../images/gallery-th/hobbit-full.jpg"
+		"mainImg": "images/gallery-th/hobbit.jpg",
+		"fullImg": "images/gallery-th/hobbit-full.jpg"
 	},
 	{ 
 		"title": "Harry Potter 7 Part II",
@@ -51,8 +51,8 @@
 		"scope": "Producion",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/hp72.jpg",
-		"fullImg": "../images/gallery-th/hp72-full.jpg"
+		"mainImg": "images/gallery-th/hp72.jpg",
+		"fullImg": "images/gallery-th/hp72-full.jpg"
 	},
 	{ 
 		"title": "Jack the Gaint Killer",
@@ -60,8 +60,8 @@
 		"scope": "Producion",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-th/jack.jpg",
-		"fullImg": "../images/gallery-th/jack-full.jpg"
+		"mainImg": "images/gallery-th/jack.jpg",
+		"fullImg": "images/gallery-th/jack-full.jpg"
 	},
 	{ 
 		"title": "Final Fantasy XIII-2",
@@ -69,8 +69,8 @@
 		"scope": "Design and Production",
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-gam/ffxiii-2.jpg",
-		"fullImg": "../images/gallery-gam/ffxiii-2-full.jpg"
+		"mainImg": "images/gallery-gam/ffxiii-2.jpg",
+		"fullImg": "images/gallery-gam/ffxiii-2-full.jpg"
 	},
 	{ 
 		"title": "Metal Gear Rising: Revengeance",
@@ -78,7 +78,7 @@
 		"scope": "Audio / Visual",
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
-		"mainImg": "../images/gallery-gam/mgrr.jpg",
-		"fullImg": "../images/gallery-gam/mgrr-full.jpg"
+		"mainImg": "images/gallery-gam/mgrr.jpg",
+		"fullImg": "images/gallery-gam/mgrr-full.jpg"
 	}
 ]
