@@ -34,14 +34,17 @@
         <div id="page-1-wrapper">
           <img src="images/crp-logo.svg" id="crp-logo" >
           <div id="page-1-block">
-              <div id="page-1-theatrical" class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+              <div id="page-1-theatrical" class="theatrical-box">
                 <div class="gradient-strip theatrical" style="height:15px; margin-top:192px;" ></div>
+                <img src="">
               </div>
-              <div id="page-1-homeEnt" class="homeEnt-box" style="background-image:url('http://placehold.it/318x220')">
-                <div class="gradient-strip homeEnt" style="height:15px; margin-top:192px;"></div>              
+              <div id="page-1-homeEnt" class="homeEnt-box">
+                <div class="gradient-strip homeEnt" style="height:15px; margin-top:192px;"></div> 
+                <img src="">            
               </div>
-              <div id="page-1-gaming" class="gaming-box" style="background-image:url('http://placehold.it/318x220'); margin-right:0px;">
-                <div class="gradient-strip gaming" style="height:15px; margin-top:192px;"></div>                
+              <div id="page-1-gaming" class="gaming-box" style="margin-right:0px">
+                <div class="gradient-strip gaming" style="height:15px; margin-top:192px;"></div>  
+                <img src="">              
               </div>
           </div>
         </div>
@@ -85,18 +88,21 @@
   </div> <!-- end wrapper -->
 
     <script id="theatricalProjectTemplate" type="text/template">
-      <div class="theatrical-box" style="background-image:url('http://placehold.it/318x220')">
+      <div class="theatrical-box">
           <div class="gradient-strip theatrical" ><%= projectType %></div>
+          <img src=<%= mainImg %>>
       </div>
     </script>
     <script id="homeEntProjectTemplate" type="text/template">
-      <div class="homeEnt-box" style="background-image:url('http://placehold.it/318x220')">
+      <div class="homeEnt-box">
           <div class="gradient-strip homeEnt" ><%= projectType %></div>
+          <img src=<%= mainImg %>>
       </div>
     </script>
     <script id="gamingProjectTemplate" type="text/template">
-      <div class="gaming-box" style="background-image:url('http://placehold.it/318x220')">
+      <div class="gaming-box">
           <div class="gradient-strip gaming" ><%= projectType %></div>
+          <img src=<%= mainImg %>>
       </div>
     </script>
 

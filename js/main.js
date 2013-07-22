@@ -13,10 +13,10 @@ $(document).ready(function(){
 		}, 1000, 'easeOutCubic');
 	}); // page link
 
-	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming', function(){
+	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
 		$('html, body').animate({
 			scrollTop: $('#portfolio').offset().top
-		}, 1000, 'easeOutCubic');
+		}, 700, 'easeOutCubic');
 	});
 
 	// BACKBONE 
@@ -89,7 +89,7 @@ $(document).ready(function(){
 
 function pageOneCycle(data) {
 	var theatArray = [], homeEntArray = [], gamingArray = [],
-		theatPos = 1, homeEntPos = 1, gamingPos = 1;
+		theatPos = 0, homeEntPos = 0, gamingPos = 0;
 
 	_.each(data, function(proj){
 		switch (proj.projectType) {
@@ -104,13 +104,20 @@ function pageOneCycle(data) {
 				break;	
 		}
 	});
-	$('#page-1-theatrical').css({'background-image': 'url(' + theatArray[0] + ')'});
-	$('#page-1-homeEnt').css({'background-image': "url('" + homeEntArray[0] + "')" });
-	$('#page-1-gaming').css({'background-image': "url('" + gamingArray[0] + "')" });
-	setInterval(function(){
-					
-	}, 3000);
 
+	$('#page-1-theatrical > img').attr('src', theatArray[0]);
+	$('#page-1-homeEnt > img').attr('src', homeEntArray[0]);
+	$('#page-1-gaming > img').attr('src', gamingArray[0]);
+
+	setInterval(function(){
+		console.log(theatPos + " = " + theatArray[theatPos]);
+		
+		(theatPos < (theatArray.length-1)) ? theatPos+=1 : theatPos = 0;
+		
+		$('#page-1-theatrical > img').fadeOut('slow', function(){
+			$(this).attr('src', theatArray[theatPos]).fadeIn('slow');	
+		})
+	}, 3000);
 }
 
 $(window).scroll(function(){

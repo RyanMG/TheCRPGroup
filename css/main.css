@@ -71,7 +71,7 @@ p { padding: 0px; margin:0px;}
 .addy { position:absolute; width:598px; left:50%; margin-left:-299px; white-space: pre; cursor: default; }
 
 /* TOP NAV BAR */
-nav {width: 100%; height:50px; background:#fff; position:absolute; z-index:10;}
+nav {width: 100%; height:50px; background:#fff; position:absolute; z-index:100;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
 li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
@@ -105,14 +105,28 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     margin-right:10px;
     height:220px;
     width:317px;
-    background-position: center center;
-    background-repeat: no-repeat;
     box-shadow:0px 2px 7px #000;
+    position: relative;
+    z-index:10;
 }
 
-.theatrical-box { border:7px solid #1c4c81; border-bottom:0px; }
+.theatrical-box { border: 7px solid #1c4c81; border-bottom:0px; }
 .homeEnt-box { border: 7px solid #184f55; border-bottom:0px;}
 .gaming-box { border: 7px solid #3b3e7c; border-bottom:0px; }
+
+.theatrical-box > img, .homeEnt-box > img, .gaming-box > img {
+    height:220px;
+    width:317px;
+    border:0px;
+    position:absolute;
+    z-index:0;
+    margin-top:-220px;
+}
+
+.theatrical-box:hover > .theatrical, .homeEnt-box:hover > .homeEnt, .gaming-box:hover > .gaming { 
+    color:#ddd;
+}
+
 .gradient-strip {
     height:30px;
     width:325px;
@@ -127,6 +141,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     padding-top:13px;
     letter-spacing: 3px;
     font-style: italic;
+    z-index: 40;
 }
 
 .theatrical {
