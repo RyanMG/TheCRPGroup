@@ -42,18 +42,18 @@ $(document).ready(function(){
 	    model: Project,
 	  });
 
-var ProjectView = Backbone.View.extend({
-    tagName: "div", // this is unnecessary here as the default element is a div
-    className: "project-wrap",
-    initialize: function () {
-        this.projectType = this.options.projectType;
-    },
-    template: _.template($(this.projectType).html()),
-    render: function () {
-        this.$el.html(this.template(this.model.toJSON()));
-        return this;
-    }
-});
+  	  var ProjectView = Backbone.View.extend({
+	    tagName: "div", // this is unnecessary here as the default element is a div
+	    className: "project-wrap",
+	    initialize: function () {
+	        this.template = _.template($(this.options.projectType).html());
+	    },
+	    render: function () {
+	        this.$el.html(this.template(this.model.toJSON()));
+	        return this;
+	    }
+	  });
+
 
 	  var ProjectListView = Backbone.View.extend({
 	  	el: '#projectList',
@@ -68,7 +68,18 @@ var ProjectView = Backbone.View.extend({
 	      }, this);
 	    },
 	    renderItem: function(project) {
-	      var projectView = new ProjectView({model: project });
+	      var projectView;
+	      switch (project.get("projectType")) {
+	      	case "Theatrical":
+		      projectView = new ProjectView({ model: project, projectType: '#theatricalProjectTemplate' });
+	    	  break;
+	    	case "Home Entertainment":  
+		      projectView = new ProjectView({ model: project, projectType: '#homeEntProjectTemplate' });
+	    	  break;
+	    	case "Interactive Gaming":
+		      projectView = new ProjectView({ model: project, projectType: '#gamingProjectTemplate' });
+	    	  break;
+	      };
 	      this.$el.append(projectView.render().el);
 	    }
 	  });
@@ -91,9 +102,7 @@ function pageOneCycle(data) {
 				break;	
 		}
 	});
-
 }
-
 
 $(window).scroll(function(){
 	var $scrollTop = $(window).scrollTop(),
