@@ -25,6 +25,7 @@ $(document).ready(function(){
 	  $.getJSON('source/masterProjectList.json', function(data) {
 	      masterProjectList = new ProjectList(data);
 	      var masterListing = new ProjectListView();
+	      pageOneCycle(data);
 	  });
 
 	  var Project = Backbone.Model.extend({
@@ -41,16 +42,18 @@ $(document).ready(function(){
 	    model: Project,
 	  });
 
-	  var ProjectView = Backbone.View.extend({
-	    tagName: "div",
-	    className: "project-wrap",
-	    template: _.template($(this.options.templateType).html()),
-
-	    render: function() {
-	      this.$el.html(this.template(this.model.toJSON()));
-	      return this;
-	    }
-	  });
+var ProjectView = Backbone.View.extend({
+    tagName: "div", // this is unnecessary here as the default element is a div
+    className: "project-wrap",
+    initialize: function () {
+        this.projectType = this.options.projectType;
+    },
+    template: _.template($(this.projectType).html()),
+    render: function () {
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }
+});
 
 	  var ProjectListView = Backbone.View.extend({
 	  	el: '#projectList',
@@ -65,13 +68,32 @@ $(document).ready(function(){
 	      }, this);
 	    },
 	    renderItem: function(project) {
-	      var projectView = new ProjectView({model: project, templateType: "#theatricalProjectTemplate"});
+	      var projectView = new ProjectView({model: project });
 	      this.$el.append(projectView.render().el);
 	    }
 	  });
 
 
 });// doc ready
+
+function pageOneCycle(data) {
+	var theatArray = [], homeEntArray = [], gamingArray = [];
+	_.each(data, function(proj){
+		switch (proj.projectType) {
+			case "Theatrical":
+				theatArray.push(proj.mainImg);
+				break;
+			case "Home Entertainment":
+				homeEntArray.push(proj.mainImg);
+				break;
+			case "Interactive Gaming":
+				gamingArray.push(proj.mainImg);
+				break;	
+		}
+	});
+
+}
+
 
 $(window).scroll(function(){
 	var $scrollTop = $(window).scrollTop(),
