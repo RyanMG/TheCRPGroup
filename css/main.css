@@ -70,8 +70,10 @@ p { padding: 0px; margin:0px;}
 }
 .addy { position:absolute; width:598px; left:50%; margin-left:-299px; white-space: pre; cursor: default; }
 
+section {clear:left; float:left; position: relative;}
+
 /* TOP NAV BAR */
-nav {width: 100%; height:50px; background:#fff; position:absolute; z-index:100;}
+nav {clear:left; float:left; width: 100%; height:50px; background:#fff; position:relative; z-index:100;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
 li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
@@ -80,7 +82,7 @@ li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:poin
 /* PAGES */
 #content-wrapper { }
 
-section {clear:left; float:left; position: relative;}
+
 
 section#page-1 { z-index:1; width:100%; height:700px; }
 
@@ -177,7 +179,7 @@ section#page-1 { z-index:1; width:100%; height:700px; }
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3e7c', endColorstr='#3b3e7c',GradientType=1 ); /* IE6-9 */
 }
 
-section#portfolio { z-index:0; width:100%; height:100%;}
+section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px;}
 #projectList { width:1024px; margin-top:40px; margin-left: auto; margin-right:auto;}
 /* BACK BONE CLASS */
 .project-wrap {
@@ -190,29 +192,38 @@ section#portfolio { z-index:0; width:100%; height:100%;}
 
 
 /* contact page */
-section#about-us { height:550px; width:100%; overflow:hidden; }
+section#about-us { z-index:0; height:100%; width:100%; }
 
-h2 {
+#about-us-wrap {width:1024px; height:370px; position:relative; margin-left: auto; margin-right:auto; top: 50%; margin-top:-230px;}
+#about-us-wrap > img { margin-right:11px; float:left; border:4px solid #c1c1c1;}
+.about-us-text {
+    clear:both;
+    text-align:center;
+    width:900px;
+    color:#ddd;
+    padding-top:30px;
+    margin-left:52px;
+    letter-spacing: 2px;
+    line-height: 18px;
     font-family: "proxima-nova-alt",sans-serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 40px;
-    letter-spacing: 8px;
-    color:#444;
-    height:35px;
-    padding-top:20px;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+.about-us-bold-text {
+    font-family: "proxima-nova-alt",sans-serif;
     text-align: center;
-    width:100%;
-    background-color: #fff;
-    position:relative;
-    z-index:3; 
-    color:#7597b3;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height:22px;
+    color:#eee;
+    letter-spacing: 2.5px;
 }
 
-footer {position:relative; height:100%; width:1024px; margin: 0 auto; }
-footer > img { margin-right:30px; float:left; border:2px solid #fff;}
-.about-us-text {clear:right; float:right; width:495px; color:#ddd; padding:0px; margin:0px; letter-spacing: 1.8px;}
-#contact-icons { width:443px; height:100px; margin:0 auto 0 auto; clear:both; padding-top:45px;}
+footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-512px; bottom:25px; }
+#contact-icons { width:443px; height:95px; margin:0 auto 0 auto; clear:both; }
 .contact-png {
     height:65px;
     width:65px;

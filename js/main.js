@@ -1,8 +1,11 @@
+var $height = $(window).height(); // cache to save memory
+
 $(document).ready(function(){ 
 
   $('#content-wrapper').css('display','block');
 
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 
 	// UI click to scroll to
 	$('nav').on('click', '.nav-icon', function(event) {
@@ -16,7 +19,7 @@ $(document).ready(function(){
 	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
 		$('html, body').animate({
 			scrollTop: $('#portfolio').offset().top
-		}, 700, 'easeOutCubic');
+		}, 1000, 'easeOutCubic');
 	});
 
 	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
@@ -151,19 +154,41 @@ function pageOneCycle(data) {
 }
 
 $(window).scroll(function(){
-	var $scrollTop = $(window).scrollTop(),
-		$height = $(window).height();	
+	// fucked up workaround for finding the total height of the doc
+	var body = document.body,
+	    html = document.documentElement;
+	var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 100 );
+
+	var $scrollTop = $(window).scrollTop();
+
 	// hide or show nav bar
 	if ($scrollTop > $height) {
 		$('nav').css({position: 'fixed', top: '0px'});
  		$('#projectList').css({marginTop: '90px'});
-	}
-	if ($scrollTop <= $height) {
+	} else {
 		$('nav').css({position:'relative'});
  		$('#projectList').css({marginTop: '40px'});
+	}
+
+	// update navigation
+	if ($scrollTop > $height && $scrollTop < $bottom  ) { // portfolio
+ 		$('#about-link').css({'color': '#488ee7'});	
+	 	$('#port-link').last().css({'color': '#f00'});
+	} else if ($scrollTop <= $height) { // top
+ 		$('#about-link').css({'color': '#488ee7'});
+	 	$('#port-link').css({'color': '#488ee7'});
+	} else if ($scrollTop >= $bottom) { // about us
+ 		$('#about-link').css({'color': '#f00'});	
+	 	$('#port-link').css({'color': '#488ee7'});		
 	}
 });
 
 $(window).resize(function() {
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+	$('#about-us').css({ height: $(window).height(), width: $(window).width() });
+
+	$height = $(window).height();
+
 });
+
+
