@@ -23,11 +23,15 @@ $(document).ready(function(){
 	});
 
 	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
-		$('#model-mask').fadeIn('1000');
+		$('#model-mask').fadeIn('1000', function(){
+			$('#model-frame').fadeIn('1000');
+		});
+
 	});
 
-	$('#model-mask').on('click', function(){
-		$(this).fadeOut('1000');	
+	$('#model-mask, #close-button').on('click', function(){
+		$('#model-frame').fadeOut('500');
+		$('#model-mask').fadeOut('1000');	
 	});
 
 	// BACKBONE 
