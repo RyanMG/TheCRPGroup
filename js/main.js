@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
 		$('html, body').animate({
 			scrollTop: $('#portfolio').offset().top
-		}, 700, 'easeOutCubic');
+		}, 1000, 'easeOutCubic');
 	});
 
 	// BACKBONE 
