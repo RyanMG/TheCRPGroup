@@ -19,6 +19,14 @@ $(document).ready(function(){
 		}, 700, 'easeOutCubic');
 	});
 
+	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
+		$('#model-mask').fadeIn('1000');
+	});
+
+	$('#model-mask').on('click', function(){
+		$(this).fadeOut('1000');	
+	});
+
 	// BACKBONE 
 
 	 var masterProjectList;

@@ -225,6 +225,19 @@ footer > img { margin-right:30px; float:left; border:2px solid #fff;}
 
 .contact-png:hover { background-position: center -65px; }
 
+/* MODEL WINDOW */
+
+#model-mask {
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0; left:0;
+    background-color: #000;
+    opacity:.8;
+    z-index:100;
+}
+
+
 @media screen and (max-width: 1024px) {
     body {display:none;}
 }
