@@ -75,7 +75,7 @@ section {clear:left; float:left; position: relative;}
 /* TOP NAV BAR */
 nav {clear:left; float:left; width: 100%; height:50px; background:#fff; position:relative; z-index:100;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
-li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
+li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 0px; margin-left:50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
 li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
 #nav-crp-logo { float:left; height:26px; margin:0px; padding:4px 0 0 0; }
 

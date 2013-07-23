@@ -171,15 +171,15 @@ $(window).scroll(function(){
 	}
 
 	// update navigation
-	if ($scrollTop > $height && $scrollTop < $bottom  ) { // portfolio
- 		$('#about-link').css({'color': '#488ee7'});	
-	 	$('#port-link').last().css({'color': '#f00'});
+	if ($scrollTop > ($height-100) && $scrollTop < $bottom  ) { // portfolio
+ 		$('#about-link').css({'border-bottom': '0px'});	
+	 	$('#port-link').last().css({'border-bottom': '3px solid #488ee7'});
 	} else if ($scrollTop <= $height) { // top
- 		$('#about-link').css({'color': '#488ee7'});
-	 	$('#port-link').css({'color': '#488ee7'});
+ 		$('#about-link').css({'border-bottom': '0px'});
+	 	$('#port-link').css({'border-bottom': '0px'});
 	} else if ($scrollTop >= $bottom) { // about us
- 		$('#about-link').css({'color': '#f00'});	
-	 	$('#port-link').css({'color': '#488ee7'});		
+ 		$('#about-link').css({'border-bottom': '3px solid #488ee7'});
+	 	$('#port-link').css({'border-bottom': '0px'});
 	}
 });
 
