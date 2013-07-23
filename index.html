@@ -87,30 +87,35 @@
  
   </div> <!-- end wrapper -->
 
+  <aside id="modelList"></aside>
+  <div id="model-mask" style="display:none"></div>
+
 <!-- TEMPLATE FOR UNDERSCORE / BACKBONE -->
-    <script id="theatricalProjectTemplate" type="text/template">
-      <div class="theatrical-box">
-          <div class="gradient-strip theatrical" ><%= projectType %></div>
-          <img src=<%= mainImg %> class="project-img">
-      </div>
-    </script>
-    <script id="homeEntProjectTemplate" type="text/template">
-      <div class="homeEnt-box">
-          <div class="gradient-strip homeEnt" ><%= projectType %></div>
-          <img src=<%= mainImg %> class="project-img">
-      </div>
-    </script>
-    <script id="gamingProjectTemplate" type="text/template">
-      <div class="gaming-box">
-          <div class="gradient-strip gaming" ><%= projectType %></div>
+    <script id="projectTemplate" type="text/template">
+      <div class="<%= projectCode %>-box" rel="<%= id %>">
+          <div class="gradient-strip <%= projectCode %>" ><%= projectType %></div>
           <img src=<%= mainImg %> class="project-img">
       </div>
     </script>
 
-  <div id="model-frame" style="display:none">
-    <div id="close-button"></div>
-  </div>
-  <div id="model-mask" style="display:none"></div>
+    <script id="projectModel" type="text/template">
+      <div class="model-frame" rel="<%= id %>" style="display:none">
+        <div class="model-gradient <%= projectCode %>"><%= projectType %></div>
+        <div class="close-button"></div>
+
+        <a class="model-left-arrow"></a>
+        <img class="fullArt" src="<%= fullImg %>" />
+        <a class="model-right-arrow"></a>
+
+        <div class="model-text-block">
+            <p class="model-text"><span class="bolded"><%= title %> </span></p>
+            <p class="model-text"><span class="bolded">Client: </span> <%= client %></p>
+            <p class="model-text" style="padding-bottom:10px;"><%= scope %></p>
+            <p class="model-text"><%= description %></p>
+        </div>
+
+      </div>
+  </script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

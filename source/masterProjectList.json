@@ -1,81 +1,99 @@
 [
 
 	{ 
+		"id": "1",
 		"title": "Beetlejuice: The Complete Series",
 		"client": "Shout! Factory",
 		"scope": "Design and Producion",
+		"projectCode": "homeEnt",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-he/beetlejuice.jpg",
-		"fullImg": "images/gallery-he/beelejuice-full.jpg"
+		"fullImg": "images/gallery-he/beetlejuice-full.jpg"
 	},
-	{ 
+	{
+		"id": "2",
 		"title": "Galaxy Quest: Deluxe Edition",
 		"client": "Paramount Home Entertainment",
 		"scope": "Design",
+		"projectCode": "homeEnt",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-he/galaxyquest.jpg",
 		"fullImg": "images/gallery-he/galaxyquest-full.jpg"
 	},
 	{ 
+		"id": "3",
 		"title": "42",
 		"client": "WArner Brothers",
 		"scope": "Producion",
+		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-th/42.jpg",
 		"fullImg": "images/gallery-th/42-full.jpg"
 	},
 	{ 
+		"id": "4",
 		"title": "The Campaign",
 		"client": "Warner Brothers",
 		"scope": "Producion",
+		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-th/campaign.jpg",
 		"fullImg": "images/gallery-th/campaign-full.jpg"
 	},
 	{ 
+		"id": "5",
 		"title": "The Hobbit: And Unexpected Journey",
 		"client": "Warner Brothers",
 		"scope": "Producion",
+		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-th/hobbit.jpg",
 		"fullImg": "images/gallery-th/hobbit-full.jpg"
 	},
 	{ 
+		"id": "6",
 		"title": "Harry Potter 7 Part II",
 		"client": "Warner Brothers",
 		"scope": "Producion",
+		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-th/hp72.jpg",
 		"fullImg": "images/gallery-th/hp72-full.jpg"
 	},
 	{ 
+		"id": "7",
 		"title": "Jack the Gaint Killer",
 		"client": "Warner Brothers",
 		"scope": "Producion",
+		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-th/jack.jpg",
 		"fullImg": "images/gallery-th/jack-full.jpg"
 	},
 	{ 
+		"id": "8",
 		"title": "Final Fantasy XIII-2",
 		"client": "Square Enix",
 		"scope": "Design and Production",
+		"projectCode": "gaming",		
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-gam/ffxiii-2.jpg",
 		"fullImg": "images/gallery-gam/ffxiii-2-full.jpg"
 	},
 	{ 
+		"id": "9",
 		"title": "Metal Gear Rising: Revengeance",
 		"client": "Konami",
 		"scope": "Audio / Visual",
+		"projectCode": "gaming",		
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
 		"mainImg": "images/gallery-gam/mgrr.jpg",
