@@ -257,7 +257,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     margin-left:-500px;
     background-color:#fff;
     border:5px solid #999;
-    z-index:101;
+    z-index:102;
 }
 
 .close-button {
@@ -291,7 +291,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     color:#ddd;
     letter-spacing: 7px;
     font-style: italic;
-    z-index: 102;
+    z-index: 103;
 }
 
 .fullArt{
