@@ -248,7 +248,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     z-index:100;
 }
 
-.model-frame {
+#model-backer {
     height:540px;
     width:1000px;
     position:fixed;
@@ -258,6 +258,18 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     background-color:#fff;
     border:5px solid #999;
     z-index:101;
+}
+
+.model-frame {
+    height:540px;
+    width:1000px;
+    position:fixed;
+    top:50%; left:50%;
+    margin-top:-275px;
+    margin-left:-500px;
+    background-color:#fff;
+    border:5px solid #999;
+    z-index:102;
 }
 
 .close-button {
@@ -291,7 +303,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     color:#ddd;
     letter-spacing: 7px;
     font-style: italic;
-    z-index: 102;
+    z-index: 103;
 }
 
 .fullArt{

@@ -25,28 +25,38 @@ $(document).ready(function(){
 	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
 		var $this = $(this).attr('rel');
 		$('#model-mask').fadeIn('800');
+		$('#model-backer').fadeIn('800');
 		$('.model-frame[rel="' + $this +'"]').fadeIn('800');
 	});
 
 	$('body').on('click','#model-mask, .close-button', function() {
 		$('.model-frame').fadeOut('500');
+		$('#model-backer').fadeOut('800');
 		$('#model-mask').fadeOut('500');	
 	});
 
 	$('body').on('click', '.model-left-arrow', function(){
-		var $this = parseInt($(this).parent().attr('rel'));
-		
+		var $this = $(this).parent();
+		var id = parseInt($(this).parent().attr('rel'));
+		if (id === 1) id = lastProject;
+		else id--;
+		$('.model-frame[rel="' + id +'"]').fadeIn('1000');
+		$($this).fadeOut('1000');
 	});
 
 	$('body').on('click', '.model-right-arrow', function(){
-		var $this = parseInt($(this).parent().attr('rel'));
-
-	});
+		var $this = $(this).parent();
+		var id = parseInt($(this).parent().attr('rel'));
+		if (id === lastProject) id = 1;
+		else id++;
+		$('.model-frame[rel="' + id +'"]').fadeIn('1000');
+		$($this).fadeOut('1000');	});
 
 	// BACKBONE 
 
-	 var masterProjectList;
+	 var masterProjectList, lastProject;
 	  $.getJSON('source/masterProjectList.json', function(data) {
+	  	  lastProject = parseInt(data[data.length - 1]['id']); // get ID of last project
 	      masterProjectList = new ProjectList(data);
 	      var masterListing = new ProjectListView();
           var masterModelListing = new ProjectModelListView();
