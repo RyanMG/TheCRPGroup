@@ -294,11 +294,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     z-index: 103;
 }
 
-.fullArt{
+.fullArt {
     height: 390px;
     width: 889px;
     float:left;
 }
+
 .model-left-arrow, .model-right-arrow {
     cursor:pointer;
     height:36px;
@@ -347,6 +348,13 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     font-weight:600;
 }
 
+.flowplayer {
+    margin:20px 0 0 133px;
+    height:350px;
+    width:622px;
+}
+
+/* END MODEL WINDOW */
 
 @media screen and (max-width: 1024px) {
     body {display:none;}

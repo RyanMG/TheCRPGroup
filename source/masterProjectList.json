@@ -8,6 +8,7 @@
 		"projectCode": "homeEnt",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-he/beetlejuice.jpg",
 		"fullImg": "images/gallery-he/beetlejuice-full.jpg"
 	},
@@ -19,6 +20,7 @@
 		"projectCode": "homeEnt",
 		"projectType": "Home Entertainment",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-he/galaxyquest.jpg",
 		"fullImg": "images/gallery-he/galaxyquest-full.jpg"
 	},
@@ -30,6 +32,7 @@
 		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-th/42.jpg",
 		"fullImg": "images/gallery-th/42-full.jpg"
 	},
@@ -41,6 +44,7 @@
 		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-th/campaign.jpg",
 		"fullImg": "images/gallery-th/campaign-full.jpg"
 	},
@@ -52,6 +56,7 @@
 		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-th/hobbit.jpg",
 		"fullImg": "images/gallery-th/hobbit-full.jpg"
 	},
@@ -63,6 +68,7 @@
 		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-th/hp72.jpg",
 		"fullImg": "images/gallery-th/hp72-full.jpg"
 	},
@@ -74,6 +80,7 @@
 		"projectCode": "theatrical",
 		"projectType": "Theatrical",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-th/jack.jpg",
 		"fullImg": "images/gallery-th/jack-full.jpg"
 	},
@@ -85,6 +92,7 @@
 		"projectCode": "gaming",		
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
+		"video" : "false",
 		"mainImg": "images/gallery-gam/ffxiii-2.jpg",
 		"fullImg": "images/gallery-gam/ffxiii-2-full.jpg"
 	},
@@ -96,7 +104,8 @@
 		"projectCode": "gaming",		
 		"projectType": "Interactive Gaming",
 		"description": "Blah blah blah",
-		"mainImg": "images/gallery-gam/mgrr.jpg",
-		"fullImg": "images/gallery-gam/mgrr-full.jpg"
+		"video" : "true",
+		"mainImg": "images/gallery-vid/mgrr.jpg",
+		"fullImg": "images/gallery-vid/mgrr-full"
 	}
 ]

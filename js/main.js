@@ -90,7 +90,7 @@ $(document).ready(function(){
 	  	tagName: "div",
 	  	className: "model-wrap",
 	  	initialize: function() {
-	  		this.template = _.template($('#projectModel').html());
+	  		this.template = _.template($(this.options.templ).html());
 	  	},
 	  	render: function(){
 	  		this.$el.html(this.template(this.model.toJSON()));
@@ -123,15 +123,20 @@ $(document).ready(function(){
 	      }, this);
 	    },
 	    renderItem: function(project) {
-	      var projectModelView = new ProjectModelView({ model: project });
-	      this.$el.append(projectModelView.render().el);
+	      var isVideo = project.get('video');
+	      if (isVideo == "true") {	
+	    	var projectModelView = new ProjectModelView({ model: project, templ: '#videoProjectModel' });
+	      	this.$el.append(projectModelView.render().el);
+	      } else {
+	      	var projectModelView = new ProjectModelView({ model: project, templ: '#projectModel'});
+	      	this.$el.append(projectModelView.render().el);
+	      }
 	    }
 	  });
 
 
 	  var ProjectListView = Backbone.View.extend({
 	  	el: '#projectList',
-	  	el2: '#modelList',
 	    initialize: function() {
 	      this.collection = masterProjectList;
 	      this.render();
