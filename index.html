@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/fp-minimalist.css">
     <link rel="stylesheet" href="css/main.css">
 
     <style type="text/css">
@@ -36,15 +35,15 @@
           <img src="images/crp-logo.svg" id="crp-logo" >
           <div id="page-1-block">
               <div id="page-1-theatrical" class="theatrical-box">
-                <div class="gradient-strip theatrical" style="height:15px; margin-top:192px;" ></div>
+                <div class="gradient-strip theatrical front-page-shift"></div>
                 <img src="" class="project-img">
               </div>
               <div id="page-1-homeEnt" class="homeEnt-box">
-                <div class="gradient-strip homeEnt" style="height:15px; margin-top:192px;"></div> 
+                <div class="gradient-strip homeEnt front-page-shift"></div> 
                 <img src="" class="project-img">
               </div>
               <div id="page-1-gaming" class="gaming-box" style="margin-right:0px">
-                <div class="gradient-strip gaming" style="height:15px; margin-top:192px;"></div>  
+                <div class="gradient-strip gaming front-page-shift"></div>  
                 <img src="" class="project-img">            
               </div>
           </div>
@@ -55,8 +54,8 @@
       <nav> 
         <ul id="nav-icon-list">
           <img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1">
-          <li class="nav-icon proxima-nova-alt-reg-22" id="about-link" rel="#about-us">ABOUT US</li>
-          <li class="nav-icon proxima-nova-alt-reg-22" id="port-link" rel="#portfolio">PORTFOLIO</li>
+          <li class="nav-icon" id="about-link" rel="#about-us">ABOUT US</li>
+          <li class="nav-icon" id="port-link" rel="#portfolio">PORTFOLIO</li>
         </ul>
       </nav>
 
@@ -85,7 +84,7 @@
       </footer>
 
     </section>
- 
+
   </div> <!-- end wrapper -->
 
   <aside id="modelList"></aside>
@@ -119,20 +118,17 @@
     </script>
 
     <script id="videoProjectModel" type="text/template">
-      <div class="model-frame" rel="<%= id %>">
+      <div class="model-frame" rel="<%= id %>" style="display:none">
         <div class="model-gradient <%= projectCode %>"><%= projectType %></div>
         <div class="close-button"></div>
 
         <a class="model-left-arrow"></a>
         <div class="fullArt">
-          <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.5625" style="background-image: url("<%= fullImg %>.jpg");">
-            <video>
-               <source type="video/mp4" src="<%= fullImg %>.mp4">
-               <source type="video/ogg" src="<%= fullImg %>.ogv">
-               <source type="video/webm" src="<%= fullImg %>.webm">
-
-            </video>
-          </div>
+          <video controls>
+            <source src="images/gallery-vid/mgrr-full.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="images/gallery-vid/mgrr-full.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="images/gallery-vid/mgrr-full.ogv" type='video/ogg; codecs="theora, vorbis"' />
+          </video>
         </div>
         <a class="model-right-arrow"></a>
 
@@ -151,8 +147,6 @@
   <script src="js/plugins.js"></script>
   <script src="js/vendor/underscore.js"></script>
   <script src="js/vendor/backbone.js"></script>
-  <script src="js/vendor/flowplayer.min.js"></script>
-  <script>flowplayer.conf.embed = false</script> <!-- disable embed option -->
   <script src="js/main.js"></script>
 
   <!-- serve fonts last, since it takes a god awful amount of time --> 

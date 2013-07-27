@@ -75,8 +75,21 @@ section {clear:left; float:left; position: relative;}
 /* TOP NAV BAR */
 nav {clear:left; float:left; width: 100%; height:50px; background:#fff; position:relative; z-index:100;}
 ul#nav-icon-list {list-style:none; width:1024px; margin:0px auto 0 auto; padding:9px 0 0 0; height:41px;}
-li.nav-icon { list-style:none; float:right; display:inline-block; padding:7px 0 0 0px; margin-left:50px; color: #488ee7; text-shadow: 0px 0px 0px #2a4e7c; letter-spacing: 1.5px;}
-li.nav-icon:hover {color: #2a4e7c; text-shadow: 0px 0px 0px #2a4e7c; cursor:pointer;}
+li.nav-icon { 
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height:22px;
+        color:#fff;
+        list-style:none;
+        float:right;
+        display:inline-block;
+        padding:7px 0 0 0px;
+        margin-left:50px;
+        color: #488ee7;
+        letter-spacing: 1.5px;
+}
+li.nav-icon:hover {color: #2a4e7c; cursor:pointer;}
 #nav-crp-logo { float:left; height:26px; margin:0px; padding:4px 0 0 0; }
 
 /* PAGES */
@@ -115,6 +128,8 @@ section#page-1 { z-index:1; width:100%; height:700px; }
 .theatrical-box { border: 7px solid #1c4c81; border-bottom:0px; }
 .homeEnt-box { border: 7px solid #184f55; border-bottom:0px;}
 .gaming-box { border: 7px solid #3b3e7c; border-bottom:0px; }
+
+.front-page-shift { height:15px !important; margin-top:192px !important; }
 
 .project-img {
     height:220px;
@@ -348,7 +363,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     font-weight:600;
 }
 
-.flowplayer {
+.fullArt > video {
     margin:20px 0 0 133px;
     height:350px;
     width:622px;
@@ -356,8 +371,128 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 /* END MODEL WINDOW */
 
-@media screen and (max-width: 1024px) {
-    body {display:none;}
+@media screen and (max-width: 1025px) {
+
+    #page-1-wrapper {
+        width:720px;
+        height:300px;
+        position:absolute;
+        left:50%; top:50%;
+        margin-left:-360px;
+        margin-top: -150px;
+    }
+
+    #crp-logo {
+        padding: 0;
+        margin: 0;
+        width: 500px;
+        margin: 0 0px 0 90px;
+    }
+    #page-1-block {height:190px; width:100%; margin-top:40px;}
+
+    .theatrical-box, .homeEnt-box, .gaming-box {
+        cursor:pointer;
+        display:inline-block;
+        white-space: nowrap;
+        margin-right:8px;
+        height:153px;
+        width:220px;
+        box-shadow:0px 2px 7px #000;
+        position: relative;
+        z-index:10;
+    }
+
+    .theatrical-box { border: 5px solid #1c4c81; border-bottom:0px; }
+    .homeEnt-box { border: 5px solid #184f55; border-bottom:0px;}
+    .gaming-box { border: 5px solid #3b3e7c; border-bottom:0px; }
+
+    .project-img {
+        height:153px;
+        width:220px;
+        border:0px;
+        position:absolute;
+        z-index:0;
+        margin-top:-154px;
+    }
+
+    .gradient-strip {
+        height:23px;
+        width:220px;
+        border:0px;
+        margin:0px;
+        padding:0px;
+        position: relative;
+        margin-top:125px;
+        font-size:16px;
+        text-align:center;
+        color:#7597b3;
+        padding-top:5px;
+        letter-spacing: 3px;
+        font-style: italic;
+        z-index: 40;
+    }
+    .front-page-shift { height:10px !important; margin-top:130px !important; }
+
+    nav {position:fixed !important; top:0px !important; margin:0px !important;}
+    ul#nav-icon-list {
+        list-style:none;
+        width:100%;
+        margin:0px auto 0 auto;
+        padding:9px 0px 0 0px;
+        height:41px;
+    }
+    li.nav-icon { font-family: "proxima-nova-alt",sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 26px;
+        line-height:26px;
+        color:#fff;
+        list-style:none;
+        float:right;
+        display:inline-block;
+        padding:7px 0 0 0px;
+        margin-left:50px;
+        margin-right:30px;
+        margin-top:-3px;
+        color: #488ee7;
+        letter-spacing: 1.5px;
+    }
+    
+    section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0;}
+    
+    #projectList { width:720px; height:100%; margin-top:90px !important; margin-left: auto; margin-right:auto;}
+    /* BACK BONE CLASS */
+    .project-wrap {
+        height:153px;
+        width:220px;
+        float:left;
+        margin:0px 28px 25px 0;
+    }
+
+    
+    #nav-crp-logo { margin-left:30px;}
+
+    section#about-us { z-index:0; height:1024px; width:100%; }
+    
+    #about-us-wrap {
+        height:500px;
+    }
+    #about-us-wrap > img {
+        display:block;
+        float:none;
+        margin:0px auto 20px auto;
+
+    }
+    footer { position:relative; height:100px; width:1024px; }
+
 }
+
+
+
+
+
+
+
+
 
 

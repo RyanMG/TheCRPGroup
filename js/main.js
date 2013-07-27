@@ -5,6 +5,7 @@ $(document).ready(function(){
   $('#content-wrapper').css('display','block');
 
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+	$('#portfolio').css({ minHeight: $(window).height() }); 
 	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 
 	// UI click to scroll to
@@ -17,9 +18,10 @@ $(document).ready(function(){
 	}); // page link
 
 	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
-		$('html, body').stop().animate({
-			scrollTop: $('nav').offset().top
-		}, 1000, 'easeOutCubic');
+		var navTo = ($(window).width() >= 1025) ? 'nav' : '#portfolio'; 
+ 	 		$('html, body').stop().animate({
+				scrollTop: $(navTo).offset().top
+			}, 1000, 'easeOutCubic');
 	});
 
 	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
@@ -49,6 +51,7 @@ $(document).ready(function(){
 			$('.model-frame[rel="' + id +'"]').show();
 			$($this).fadeOut('1500');
 		}
+		pauseVideos();
 	});
 
 	$('body').on('click', '.model-right-arrow', function(){
@@ -65,6 +68,7 @@ $(document).ready(function(){
 				$($this).hide();
 			});
 		}
+		pauseVideos();
 	});
 
 	// BACKBONE 
@@ -209,6 +213,14 @@ function pageOneCycle(data) {
 			cycleTheatrical();
 		}, 3000);
 	};
+}
+
+function pauseVideos() { // pauses videos when switching pages
+	$('video').each(function(){
+		if (!this.paused) {
+			this.pause();	
+		}
+	});
 }
 
 $(window).scroll(function(){
