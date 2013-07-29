@@ -371,7 +371,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 /* END MODEL WINDOW */
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1025px) { /* iPAD */
 
     #page-1-wrapper {
         width:720px;
@@ -431,7 +431,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         font-style: italic;
         z-index: 40;
     }
-    .front-page-shift { height:10px !important; margin-top:130px !important; }
+    .front-page-shift { height:10px !important; margin-top:138px !important; }
 
     nav {position:fixed !important; top:0px !important; margin:0px !important;}
     ul#nav-icon-list {
@@ -475,15 +475,67 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     section#about-us { z-index:0; height:1024px; width:100%; }
     
     #about-us-wrap {
+        width:800px;
         height:500px;
     }
-    #about-us-wrap > img {
-        display:block;
-        float:none;
-        margin:0px auto 20px auto;
 
+    #about-img-one, #about-img-two, #about-img-three { width:220px; height:137px; display:inline-block;}
+
+    #about-img-one:first-child { margin-left:40px;}
+
+    .about-us-text {
+        clear:both;
+        text-align:center;
+        width:800px;
+        padding-top:30px;
+        margin: 0 auto;
     }
-    footer { position:relative; height:100px; width:1024px; }
+
+ 
+    footer { position:absolute; height:100px; width:1024px; bottom:40px; }
+
+    .model-frame {
+        height:432px;
+        width:800px;
+        margin-top:-216px;
+        margin-left:-400px;
+        border:4px solid #999;
+    }
+
+    .model-gradient {
+        height:28px;
+        width:800px;
+        padding-top:10px;
+        font-size:23px;
+        letter-spacing: 6px;
+    }
+
+    .fullArt {
+        height: 307px;
+        width: 700px;
+    }
+
+    .model-left-arrow, .model-right-arrow {
+        margin-top:200px;
+        margin-left:30px;
+    }
+
+    .model-right-arrow {
+        background-position: right top;   
+        margin-left:0px;
+    }
+
+    .model-text-block {
+        width: 600px;
+        height: 85px;
+        margin: 10px auto 0px auto;
+    }
+
+    .fullArt > video {
+        margin:7px 0 0 90px;
+        height:290px;
+        width:515px;
+    }
 
 }
 

@@ -2,6 +2,8 @@ var $height = $(window).height(); // cache to save memory
 
 $(document).ready(function(){ 
 
+  aboutUsCycle(); // initiate the page cycling on About Us
+
   $('#content-wrapper').css('display','block');
 
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
@@ -260,5 +262,40 @@ $(window).resize(function() {
 	$height = $(window).height();
 
 });
+
+function aboutUsCycle() {
+	var img1Array = ['images/gallery-about/about-1-1.jpg'];
+	var img2Array = ['images/gallery-about/about-2-1.jpg'];
+	var img3Array = ['images/gallery-about/about-3-1.jpg'];
+	var onePos = 0, twoPos = 0, threePos = 0;
+
+
+	$('#about-img-one').attr('src', img1Array[0]);
+	$('#about-img-two').attr('src', img2Array[0]);
+	$('#about-img-three').attr('src', img3Array[0]);
+	cycleOne();
+
+	function cycleOne(){
+		setTimeout(function(){
+			(onePos < (img1Array.length-1)) ? onePos += 1 : onePos = 0;
+			$('#about-img-one').attr('src', img1Array[onePos]);
+			cycleTwo();
+		}, 3000);
+	};
+	function cycleTwo(){
+		setTimeout(function(){
+			(twoPos < (img2Array.length-1)) ? twoPos += 1 : twoPos = 0;
+			$('#about-img-two').attr('src', img2Array[twoPos]);
+			cycleThree();
+		}, 3000);
+	};
+	function cycleThree(){
+		setTimeout(function(){
+			(threePos < (img3Array.length-1)) ? threePos += 1 : threePos = 0;
+			$('#about-img-three').attr('src', img3Array[threePos]);
+			cycleOne();
+		}, 3000);
+	};
+}
 
 
