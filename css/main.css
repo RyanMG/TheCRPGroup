@@ -375,17 +375,24 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 /* END MODEL WINDOW */
 
-
 /* !!!!!!!!!!!!!!!!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!!!!!!!!!! */
+@media screen and (max-width: 1025px) {
+    /* Desktop with screen shrunk */
+}
 
-@media screen and (max-width: 1025px) { /* iPAD */
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    body { width:1024px; }
+    section#page-1 { z-index:1; width:100%; height:680px !important; }
+
     #page-1-wrapper {
         width:720px;
         height:300px;
         position:absolute;
-        left:50%; top:50%;
-        margin-left:-360px;
-        margin-top: -150px;
+        top: 0px; left:0px;
+        margin-left:145px;
+        margin-top:180px;
+
     }
 
     #crp-logo {
@@ -423,12 +430,13 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
     .gradient-strip {
         height:23px;
-        width:220px;
+        width:225px;
         border:0px;
         margin:0px;
         padding:0px;
         position: relative;
         margin-top:125px;
+        margin-left:-2px;
         font-size:16px;
         text-align:center;
         color:#7597b3;
@@ -438,6 +446,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         z-index: 40;
     }
     .front-page-shift { height:10px !important; margin-top:138px !important; }
+    .addy { width:710px; left:0px; margin-left:155px; white-space: pre; cursor: default; }
 
     nav {position:fixed !important; top:0px !important; margin:0px !important;}
     ul#nav-icon-list {
@@ -466,7 +475,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     
     section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0;}
     
-    #projectList { width:720px; height:100%; margin-top:90px !important; margin-left: auto; margin-right:auto;}
+    #projectList { width:720px; height:100%; margin-top:90px !important; margin-left: 130px; }
     /* BACK BONE CLASS */
     .project-wrap {
         height:153px;
@@ -478,11 +487,14 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     
     #nav-crp-logo { margin-left:30px;}
 
-    section#about-us { z-index:0; height:1024px; width:100%; }
+    section#about-us { z-index:0; height:660px !important; width:100%; }
     
     #about-us-wrap {
         width:800px;
         height:500px;
+        margin-left:105px;
+        top:0px; left:0px;
+        margin-top:120px;
     }
 
     #about-img-one, #about-img-two, #about-img-three { width:220px; height:137px; display:inline-block;}
@@ -498,7 +510,18 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     }
 
  
-    footer { position:absolute; height:100px; width:1024px; bottom:40px; }
+    footer { position:absolute; height:100px; width:800px; left:0px; bottom:20px; margin-left:0px; }
+    footer > p { margin-left:-50px;}
+    #contact-icons { width:443px; height:95px; margin:0 0 0 280px; clear:both; }
+    .contact-png {
+        height:65px;
+        width:65px;
+        margin:10px 10px;
+        position:relative;
+        display:inline-block;
+        background-repeat: no-repeat;
+        background-position:center top;
+    }
 
     .model-frame {
         height:432px;

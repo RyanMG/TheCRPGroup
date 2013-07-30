@@ -251,7 +251,7 @@ $(window).scroll(function(){
 	// fucked up workaround for finding the total height of the doc
 	var body = document.body,
 	    html = document.documentElement;
-	var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 100 );
+	var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 300 );
 
 	var $scrollTop = $(window).scrollTop();
 
