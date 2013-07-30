@@ -11,35 +11,54 @@ $(document).ready(function(){
 	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 
 	// UI click to scroll to
-	$('nav').on('click', '.nav-icon', function(event) {
+	$('nav').on('click touchstart', '.nav-icon', function(event) {
 	   event.preventDefault();
 	   var link = $(event.target).attr("rel");
 		$('html, body').stop().animate({
 			scrollTop: $(link).offset().top
 		}, 1000, 'easeOutCubic');
+		return false;		
 	}); // page link
 
-	$('#page-1').on('click', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
+	$('#page-1').on('click touchstart', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
 		var navTo = ($(window).width() >= 1025) ? 'nav' : '#portfolio'; 
  	 		$('html, body').stop().animate({
 				scrollTop: $(navTo).offset().top
 			}, 1000, 'easeOutCubic');
+		return false;			
 	});
 
-	$('#portfolio').on('click', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
+	$('#portfolio').on('click touchstart', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
 		var $this = $(this).attr('rel');
 		$('#model-mask').fadeIn('800');
 		$('#model-backer').fadeIn('800');
 		$('.model-frame[rel="' + $this +'"]').fadeIn('800');
+		return false;		
 	});
 
-	$('body').on('click','#model-mask, .close-button', function() {
+	$('body').on('click touchstart','#model-mask, .close-button', function() {
 		$('.model-frame').fadeOut('500');
 		$('#model-backer').fadeOut('800');
-		$('#model-mask').fadeOut('500');	
+		$('#model-mask').fadeOut('500');
+		return false;
 	});
 
-	$('body').on('click', '.model-left-arrow', function(){
+	$('body').on('click touchstart', '.poster, .video', function(){
+		var $this = $(this),
+			$that = $this.parent().find('.video');		
+		if ($this.hasClass('poster')) {
+			$this.css({'display': 'none'});
+			$that.css({'display': 'block'});
+			$that.children().get(0).play();
+		} else if ($this.hasClass('video') && !$that.children().get(0).paused) {
+			$that.children().get(0).pause();
+		} else {
+			$that.children().get(0).play();
+		}
+		return false;
+	});
+
+	$('body').on('click touchstart', '.model-left-arrow', function(){
 		var $this = $(this).parent();
 		var id = parseInt($(this).parent().attr('rel'));
 		if (id === 1) { 
@@ -54,9 +73,11 @@ $(document).ready(function(){
 			$($this).fadeOut('1500');
 		}
 		pauseVideos();
+		return false;		
 	});
 
-	$('body').on('click', '.model-right-arrow', function(){
+	$('body').on('click touchstart', '.model-right-arrow', function(){
+		console.log('test2');
 		var $this = $(this).parent();
 		var id = parseInt($(this).parent().attr('rel'));
 		if (id === lastProject) { 
@@ -71,6 +92,7 @@ $(document).ready(function(){
 			});
 		}
 		pauseVideos();
+		return false;		
 	});
 
 	// BACKBONE 

@@ -5,10 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>The CRP Group | Entertainment Design in Burbank, CA</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <meta name = "format-detection" content = "telephone=no" />
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -32,29 +33,29 @@
 
       <section id="page-1">
         <div id="page-1-wrapper">
-          <img src="images/crp-logo.svg" id="crp-logo" >
+          <img src="images/crp-logo.svg" id="crp-logo" alt="CRP Logo" >
           <div id="page-1-block">
               <div id="page-1-theatrical" class="theatrical-box">
                 <div class="gradient-strip theatrical front-page-shift"></div>
-                <img src="" class="project-img">
+                <img src="" class="project-img" alt="Theatrical">
               </div>
               <div id="page-1-homeEnt" class="homeEnt-box">
                 <div class="gradient-strip homeEnt front-page-shift"></div> 
-                <img src="" class="project-img">
+                <img src="" class="project-img" alt="Home Entertainment">
               </div>
               <div id="page-1-gaming" class="gaming-box" style="margin-right:0px">
                 <div class="gradient-strip gaming front-page-shift"></div>  
-                <img src="" class="project-img">            
+                <img src="" class="project-img" alt="Interactive Gaming">
               </div>
           </div>
         </div>
-        <p class="proxima-nova-alt-thin-11 addy" style="bottom:20px;"> 2301 West Olive Avenue, Suite B    |    Burbank, CA 91506    |    323-467-2772    |    info@thecrpgroup.com</p>
+        <p class="proxima-nova-alt-thin-11 addy" style="bottom:20px;"> 2301 West Olive Avenue, Suite B    |    Burbank, CA 91506    |    323-467-2772    |    <a class="mailLink" href="mailto:info@thecrpgroup.com">info@thecrpgroup.com</a></p>
       </section>
 
       <nav> 
         <ul id="nav-icon-list">
-          <img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1">
-          <li class="nav-icon" id="about-link" rel="#about-us">ABOUT US</li>
+          <li><img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1" alt="CRP Logo"></li>
+          <li class="nav-icon" id="about-link" rel="#about-us">ABOUT</li>
           <li class="nav-icon" id="port-link" rel="#portfolio">PORTFOLIO</li>
         </ul>
       </nav>
@@ -80,7 +81,7 @@
             <a style="background-image: url('images/contact-tw.png')" class="contact-png" href="http://www.twitter.com/thecrpgroup"></a>
             <a style="background-image: url('images/contact-fb.png')" class="contact-png" href="https://www.facebook.com/thecrpgroup"></a>
           </div> 
-        <p class="proxima-nova-alt-thin-11 addy"> 2301 West Olive Avenue, Suite B    |    Burbank, CA 91506    |    323-467-2772    |    info@thecrpgroup.com</p>
+        <p class="proxima-nova-alt-thin-11 addy"> 2301 West Olive Avenue, Suite B    |    Burbank, CA 91506    |    323-467-2772    |    <a class="mailLink" href="mailto:info@thecrpgroup.com">info@thecrpgroup.com</a></p>
       </footer>
 
     </section>
@@ -94,7 +95,7 @@
     <script id="projectTemplate" type="text/template">
       <div class="<%= projectCode %>-box" rel="<%= id %>">
           <div class="gradient-strip <%= projectCode %>" ><%= projectType %></div>
-          <img src=<%= mainImg %> class="project-img">
+          <img src=<%= mainImg %> alt="<%= title &>" class="project-img">
       </div>
     </script>
 
@@ -104,7 +105,7 @@
         <div class="close-button"></div>
 
         <a class="model-left-arrow"></a>
-        <img class="fullArt" src="<%= fullImg %>" />
+        <img class="fullArt" src="<%= fullImg %>" alt ="<%= title %>" />
         <a class="model-right-arrow"></a>
 
         <div class="model-text-block">
@@ -123,11 +124,12 @@
         <div class="close-button"></div>
 
         <a class="model-left-arrow"></a>
-        <div class="fullArt">
+        <img class="fullArt poster" src='images/gallery-vid/mgrr-full.jpg' alt="<%= title %>" />
+        <div class="fullArt video" style="display:none">
           <video controls>
-            <source src="images/gallery-vid/mgrr-full.webm" type='video/webm; codecs="vp8, vorbis"' />
-            <source src="images/gallery-vid/mgrr-full.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-            <source src="images/gallery-vid/mgrr-full.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <source src="<%= fullImg %>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="<%= fullImg %>.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="<%= fullImg %>.ogv" type='video/ogg; codecs="theora, vorbis"' />
           </video>
         </div>
         <a class="model-right-arrow"></a>
