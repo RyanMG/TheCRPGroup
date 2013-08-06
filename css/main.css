@@ -369,16 +369,15 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    body { width:1024px; }
+    body { width:100%; }
     section#page-1 { z-index:1; width:100%; height:680px !important; }
 
     #page-1-wrapper {
         width:720px;
         height:300px;
         position:absolute;
-        top: 0px; left:0px;
-        margin-left:145px;
-        margin-top:180px;
+        margin-left:-355px;
+        margin-top:-150px;
 
     }
 
@@ -456,7 +455,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     
     section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0;}
     
-    #projectList { width:720px; height:100%; margin-top:90px !important; margin-left: 130px; }
+    #projectList { width:720px; height:100%; margin-top:90px !important; margin-left: auto; margin-right:auto; }
     /* BACK BONE CLASS */
     .project-wrap {
         height:153px;
@@ -473,9 +472,8 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     #about-us-wrap {
         width:800px;
         height:500px;
-        margin-left:105px;
-        top:0px; left:0px;
-        margin-top:120px;
+        margin-left: auto; margin-right:auto;
+        margin-top:-230px;
     }
 
     #about-img-one, #about-img-two, #about-img-three { width:220px; height:137px; display:inline-block;}
@@ -550,7 +548,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 
-    body { width:768px; overflow:hidden;}
+    body { width:100%; overflow:hidden;}
 
     section#page-1 { z-index:1; width:768px; height:1024px; }
 
@@ -558,9 +556,8 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         width:710px;
         height:300px;
         position:absolute;
-        left:0px; top:0px;
-        margin-top:300px;
-        margin-left:30px;
+        margin-top:-150px;
+        margin-left:-355px;
     }
 
     #crp-logo { padding: 0; margin: 0; width: 600px; margin:0 0 0 50px; }
@@ -599,7 +596,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         padding-top:7px;
     }
 
-    nav {position:fixed !important; top:0px !important; margin:0px !important; width:768px;}
+    nav {position:fixed !important; top:0px !important; margin:0px !important; width:100%;}
     #nav-crp-logo { margin-left:10px;}
     ul#nav-icon-list {
         list-style:none;
@@ -615,7 +612,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         margin-right:10px;
     }
     
-    #projectList { width:700px; height:100%; margin-top:90px !important; margin-left: 25px; }
+    #projectList { width:700px; height:100%; margin-top:90px !important; margin-left:auto; margin-right: auto; }
 
     /* BACK BONE CLASS */
     .project-wrap {
@@ -630,9 +627,8 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     #about-us-wrap {
         width:700px;
         height:500px;
-        margin-left:35px;
-        top:0px; left:0px;
-        margin-top:190px;
+        margin-left:auto; margin-right:auto;
+        margin-top:-250px;
     }
 
     #about-img-one, #about-img-two, #about-img-three { width:215px; height:134px; display:inline-block;}
@@ -704,9 +700,100 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 } /* end iPad portrait */
 
+@media only screen and (max-width : 320px) { /* phone portrait */
+
+    body { width:100%; height:100%; }
+    section#page-1 { z-index:1; width:100%; height:480px !important; }
+
+    #page-1-wrapper {
+        width:300px;
+        height:200px;
+        position:absolute;
+        left:0; top:0;
+        margin-left:10px;
+        margin-top:100px;
+    }
+
+    #crp-logo {
+        padding: 0;
+        margin: 0;
+        width: 200px;
+        margin: 0 0px 0 45px;
+    }
+    #page-1-block {height:190px; width:100%; margin-top:40px;}
+
+    .theatrical-box, .homeEnt-box, .gaming-box {
+        cursor:pointer;
+        display:inline-block;
+        white-space: nowrap;
+        margin-right:4px;
+        height:70px;
+        width:100px;
+        box-shadow:0px 2px 7px #000;
+        position: relative;
+        z-index:10;
+    }
+
+    .theatrical-box { border: 3px solid #1c4c81;  }
+    .homeEnt-box { border: 3px solid #184f55; }
+    .gaming-box { border: 3px solid #3b3e7c; }
+
+    .project-img {
+        height:70px;
+        width:100px;
+        border:0px;
+        position:absolute;
+        margin-top:-154px;
+    }
+
+    .gradient-strip {
+        height:20px;
+        width:102px;
+        position: relative;
+        margin-top:80px;
+        margin-left:-2px;
+        font-size:14px;
+        padding-top:5px;
+        letter-spacing: 3px;
+        font-style: italic;
+    }
+
+    .front-page-shift { height:10px !important; margin-top:138px !important; }
+    .addy { width:710px; left:0px; margin-left:155px; white-space: pre; cursor: default; }
+
+    nav {position:fixed !important; top:0px !important; margin:0px !important; height:35px;}
+    #nav-crp-logo { height:15px; margin:0px; padding:7px 0 0 7px; }
+    ul#nav-icon-list {
+        list-style:none;
+        width:100%;
+        margin:0px auto 0 auto;
+        padding:6px 0px 0 0px;
+        height:25px;
+    }
+    li.nav-icon { font-family: "proxima-nova-alt",sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height:26px;
+        color:#fff;
+        list-style:none;
+        float:right;
+        display:inline-block;
+        padding:2px 0 0 0px;
+        margin-left:18px;
+        margin-right:7px;
+        margin-top:-3px;
+        color: #488ee7;
+        letter-spacing: 1px;
+    }
+    
 
 
+} /* end phone portrait */
 
+@media only screen and (min-width : 321px) { /* phone landscape */ 
+
+}
 
 
 
