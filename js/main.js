@@ -1,4 +1,7 @@
-var $height = $(window).height(); // cache to save memory
+var $height = $(window).height(), // cache to save memory
+	body = document.body,
+	html = document.documentElement;
+var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 300 );
 
 $(document).ready(function(){ 
 
@@ -7,7 +10,7 @@ $(document).ready(function(){
   $('#content-wrapper').css('display','block');
 
 	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
-	$('#portfolio').css({ minHeight: $(window).height() }); 
+	$('#portfolio').css({ minHeight: $(window).height(), width: $(window).width() }); 
 	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
 
 	// UI click to scroll to
@@ -21,79 +24,81 @@ $(document).ready(function(){
 	}); // page link
 
 	$('#page-1').on('click touchstart', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
-		var navTo = ($(window).width() >= 1025) ? 'nav' : '#portfolio'; 
  	 		$('html, body').stop().animate({
-				scrollTop: $(navTo).offset().top
+				scrollTop: $('nav').offset().top
 			}, 1000, 'easeOutCubic');
 		return false;			
 	});
 
-	$('#portfolio').on('click touchstart', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
-		var $this = $(this).attr('rel');
-		$('#model-mask').fadeIn('800');
-		$('#model-backer').fadeIn('800');
-		$('.model-frame[rel="' + $this +'"]').fadeIn('800');
-		return false;		
-	});
 
-	$('body').on('click touchstart','#model-mask, .close-button', function() {
-		$('.model-frame').fadeOut('500');
-		$('#model-backer').fadeOut('800');
-		$('#model-mask').fadeOut('500');
-		return false;
-	});
+    // BUILD ALL THESE INTO VIEW EVENTS AT SOME POINT
 
-	$('body').on('click touchstart', '.poster, .video', function(){
-		var $this = $(this),
-			$that = $this.parent().find('.video');		
-		if ($this.hasClass('poster')) {
-			$this.css({'display': 'none'});
-			$that.css({'display': 'block'});
-			$that.children().get(0).play();
-		} else if ($this.hasClass('video') && !$that.children().get(0).paused) {
-			$that.children().get(0).pause();
-		} else {
-			$that.children().get(0).play();
-		}
-		return false;
-	});
+						$('#portfolio').on('click touchstart', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
+							var $this = $(this).attr('rel');
+							$('#model-mask').fadeIn('800');
+							$('#model-backer').fadeIn('800');
+							$('.model-frame[rel="' + $this +'"]').fadeIn('800');
+							return false;		
+						});
 
-	$('body').on('click touchstart', '.model-left-arrow', function(){
-		var $this = $(this).parent();
-		var id = parseInt($(this).parent().attr('rel'));
-		if (id === 1) { 
-			id = lastProject;
-			$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-				$($this).hide();
-			});
+						$('body').on('click touchstart','#model-mask, .close-button', function() {
+							$('.model-frame').fadeOut('500');
+							$('#model-backer').fadeOut('800');
+							$('#model-mask').fadeOut('500');
+							return false;
+						});
 
-		} else {
-			id--;
-			$('.model-frame[rel="' + id +'"]').show();
-			$($this).fadeOut('1500');
-		}
-		pauseVideos();
-		return false;		
-	});
+						$('body').on('click touchstart', '.poster, .video', function(){
+							var $this = $(this),
+								$that = $this.parent().find('.video');		
+							if ($this.hasClass('poster')) {
+								$this.css({'display': 'none'});
+								$that.css({'display': 'block'});
+								$that.children().get(0).play();
+							} else if ($this.hasClass('video') && !$that.children().get(0).paused) {
+								$that.children().get(0).pause();
+							} else {
+								$that.children().get(0).play();
+							}
+							return false;
+						});
 
-	$('body').on('click touchstart', '.model-right-arrow', function(){
-		console.log('test2');
-		var $this = $(this).parent();
-		var id = parseInt($(this).parent().attr('rel'));
-		if (id === lastProject) { 
-			id = 1;
-			$('.model-frame[rel="' + id +'"]').show();
-			$($this).fadeOut('1500');
+						$('body').on('click touchstart', '.model-left-arrow', function(){
+							var $this = $(this).parent();
+							var id = parseInt($(this).parent().attr('rel'));
+							if (id === 1) { 
+								id = lastProject;
+								$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+									$($this).hide();
+								});
 
-		} else {
-			id++;
-			$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-				$($this).hide();
-			});
-		}
-		pauseVideos();
-		return false;		
-	});
+							} else {
+								id--;
+								$('.model-frame[rel="' + id +'"]').show();
+								$($this).fadeOut('1500');
+							}
+							pauseVideos();
+							return false;		
+						});
+
+						$('body').on('click touchstart', '.model-right-arrow', function(){
+							console.log('test2');
+							var $this = $(this).parent();
+							var id = parseInt($(this).parent().attr('rel'));
+							if (id === lastProject) { 
+								id = 1;
+								$('.model-frame[rel="' + id +'"]').show();
+								$($this).fadeOut('1500');
+
+							} else {
+								id++;
+								$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+									$($this).hide();
+								});
+							}
+							pauseVideos();
+							return false;		
+						});
 
 	// BACKBONE 
 
@@ -247,21 +252,17 @@ function pauseVideos() { // pauses videos when switching pages
 	});
 }
 
+
 $(window).scroll(function(){
-	// fucked up workaround for finding the total height of the doc
-	var body = document.body,
-	    html = document.documentElement;
-	var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 300 );
 
 	var $scrollTop = $(window).scrollTop();
 
-	// hide or show nav bar
 	if ($scrollTop > $height) {
 		$('nav').css({position: 'fixed', top: '0px'});
- 		$('#projectList').css({marginTop: '90px'});
+		$('#projectList').css({marginTop: '90px'});
 	} else {
 		$('nav').css({position:'relative'});
- 		$('#projectList').css({marginTop: '40px'});
+		$('#projectList').css({marginTop: '40px'});
 	}
 
 	// update navigation
@@ -278,11 +279,11 @@ $(window).scroll(function(){
 });
 
 $(window).resize(function() {
-	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
-	$('#about-us').css({ height: $(window).height(), width: $(window).width() });
 
+		$('#page-1').css({ height: $(window).height(), width: $(window).width() });
+		$('#portfolio').css({ width: $(window).width() });
+		$('#about-us').css({ height: $(window).height(), width: $(window).width() });
 	$height = $(window).height();
-
 });
 
 function aboutUsCycle() {
