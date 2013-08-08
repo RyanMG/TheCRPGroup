@@ -364,6 +364,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     height:350px;
     width:622px;
 }
+.videoClicker {
+    position:absolute;
+    margin:20px 0 0 133px;
+    height:321px;
+    width:623px;
+}
 
 /* END MODEL WINDOW */
 
@@ -550,6 +556,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         height:230px;
         width:408px;
     }
+    .videoClicker {
+        position:absolute;
+        margin:9px 0 0 86px;
+        height:200px;
+        width:407px;
+    }
 } /* end tablet */
 
 
@@ -705,7 +717,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     }
 
     .model-frame {
-        height:270px;
+        height:290px;
         width:500px;
         margin-top:-135px;
         margin-left:-250px;
@@ -730,12 +742,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     }
 
     .fullArt {
-        height: 254px;
-        width: 580px;
+        height: 166px;
+        width: 380px;
     }
 
     .model-left-arrow, .model-right-arrow {
-        margin-top:180px;
+        margin-top:100px;
         margin-left:30px;
     }
 
@@ -745,15 +757,21 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     }
 
     .model-text-block {
-        width: 600px;
+        width: 450px;
         height: 85px;
         margin: 10px auto 0px auto;
     }
 
     .fullArt > video {
-        margin:9px 0 0 87px;
-        height:230px;
-        width:408px;
+        margin:9px 0 0 57px;
+        height:155px;
+        width:275px;
+    }
+    .videoClicker {
+        position:absolute;
+        margin:9px 0 0 56px;
+        height:125px;
+        width:274px;
     }
 
 }
@@ -970,6 +988,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         height:105px;
         width:186px;
     }
+    .videoClicker {
+        position:absolute;
+        margin:3px 0 0 42px;
+        height:75px;
+        width:186px;
+    }
 }
 
 /* small phones */
@@ -1183,6 +1207,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     .fullArt > video {
         margin:2px 0 0 43px;
         height:105px;
+        width:186px;
+    }
+    .videoClicker {
+        position:absolute;
+        margin:3px 0 0 42px;
+        height:75px;
         width:186px;
     }
 }

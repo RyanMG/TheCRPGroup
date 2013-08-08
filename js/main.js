@@ -48,17 +48,17 @@ $(document).ready(function(){
 							return false;
 						});
 
-						$('body').on('click touchstart', '.poster, .video', function(){
-							var $this = $(this),
-								$that = $this.parent().find('.video');		
+						$('body').on('click touchstart', '.poster, .videoClicker', function(){
+							var $this = ($(this).hasClass('fullArt')) ? $(this): $(this).parent();
+							var $that = $this.parent().find('.video');
 							if ($this.hasClass('poster')) {
 								$this.css({'display': 'none'});
 								$that.css({'display': 'block'});
-								$that.children().get(0).play();
-							} else if ($this.hasClass('video') && !$that.children().get(0).paused) {
-								$that.children().get(0).pause();
+								$that.children().get(1).play();
+							} else if ($this.hasClass('video') && !$that.children().get(1).paused) {
+								$that.children().get(1).pause();
 							} else {
-								$that.children().get(0).play();
+								$that.children().get(1).play();
 							}
 							return false;
 						});
