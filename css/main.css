@@ -60,9 +60,10 @@ p { padding: 0px; margin:0px;}
     color:#fff;
 }
 .addy { position:absolute; width:100%; text-align: center; white-space: pre; cursor: default; }
+.mobile-addy { display:none;}
 .mailLink { color:#ddd;}
 
-section {clear:left; float:left; position: relative;}
+section {clear:left; float:left; position: relative; overflow:hidden;}
 
 /* TOP NAV BAR */
 nav {clear:left; float:left; width: 100%; height:50px; background:#fff; position:relative; z-index:100;}
@@ -191,8 +192,6 @@ section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; mar
     float:left;
     margin:15px 28px 15px 0;
 }
-.project-wrap:nth-child(3n+3) {margin-right:0px;}
-
 
 /* contact page */
 section#about-us { z-index:0; height:100%; width:100%; }
@@ -239,6 +238,12 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     background-repeat: no-repeat;
     background-position:center top;
 }
+
+#mail-icon { background-image: url('../images/contact-mail.png') }
+#in-icon { background-image: url('../images/contact-in.png') }
+#vim-icon { background-image: url('../images/contact-vim.png') }
+#tw-icon { background-image: url('../images/contact-tw.png') }
+#fb-icon { background-image: url('../images/contact-fb.png') }
 
 .contact-png:hover { background-position: center -65px; }
 
@@ -364,7 +369,9 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!!!!!!!!!! */
-
+@media only screen and (min-width : 1025px) {
+    .project-wrap:nth-child(3n+3) {margin-right:0px;}
+}
 
 /* tabelets (landscape) ----------- */
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
@@ -372,8 +379,8 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     html, body { width:100%; }
 
     .scrolling-element-class { overflow: auto; -webkit-overflow-scrolling: touch; }
-
     .scrolling-element-class .child-element { position: relative; -webkit-transform: translate3d(0,0,0); }
+
     section#page-1 { z-index:1; width:100%; }
 
     #page-1-wrapper {
@@ -462,11 +469,11 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         float:left;
         margin:0px 28px 25px 0;
     }
-
+    .project-wrap:nth-child(3n+3) {margin-right:0px;}
     
     #nav-crp-logo { margin-left:30px;}
 
-    section#about-us { z-index:0; width:100%; }
+    section#about-us { z-index:0; width:100%; overflow-y:hidden !important; }
     
     #about-us-wrap {
         width:700px;
@@ -546,64 +553,73 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 } /* end tablet */
 
 
-/* large phones ----------- */
-@media only screen and (min-width : 360px) and (max-width : 767px) {
-    body { display: none; }
-}
 
-/* small phones */
-@media only screen and (max-width : 359px) {
-   
+/* large phones ----------- */
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    
     html, body { width:100%; }
 
     .scrolling-element-class { overflow: auto; -webkit-overflow-scrolling: touch; }
-
     .scrolling-element-class .child-element { position: relative; -webkit-transform: translate3d(0,0,0); }
+
     section#page-1 { z-index:1; width:100%; }
 
     #page-1-wrapper {
-        width:310px;
-        height:130px;
-        top:50%; margin-top:-100px;
+        width:500px;
+        height:300px;
+        top:30%; margin-top:0px;
     }
 
     #crp-logo {
         padding: 0;
         margin: 0;
-        width: 250px;
-        margin: 0 0px 0 27px;
+        width: 350px;
+        margin: 0 0px 0 75px;
     }
-    #page-1-block {height:100px; width:100%; margin-top:20px;}
+    #page-1-block {height:190px; width:100%; margin-top:30px;}
+    .addy {display:none;}
+    .mobile-addy { display:block; position: absolute; text-align: center; width:100%; line-height:14px;}
+
+    #page-1-theatrical, #page-1-homeEnt, #page-1-gaming,  #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img  {
+        height: 105px !important;
+        width:150px !important;
+    }
+    #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img {
+        margin-top: -108px !important ;
+    }
+    #page-1-theatrical > div, #page-1-homeEnt > div, #page-1-gaming > div {
+        width:152px !important;
+    }
 
     .theatrical-box, .homeEnt-box, .gaming-box {
         cursor:pointer;
         display:inline-block;
         white-space: nowrap;
         margin-right:8px;
-        height:63px;
-        width:90px;
-        box-shadow:0px 2px 5px #000;
+        height:153px;
+        width:220px;
+        box-shadow:0px 2px 6px #000;
         position: relative;
         z-index:10;
     }
 
-    .theatrical-box { border: 2px solid #1c4c81;  }
-    .homeEnt-box { border: 2px solid #184f55; }
-    .gaming-box { border: 2px solid #3b3e7c; }
+    .theatrical-box { border: 4px solid #1c4c81;  }
+    .homeEnt-box { border: 4px solid #184f55; }
+    .gaming-box { border: 4px solid #3b3e7c; }
 
     .project-img {
-        height:63px;
-        width:90px;
+        height:153px;
+        width:220px;
         border:0px;
         position:absolute;
-        margin-top:-65px;
+        margin-top:-157px;
     }
 
     .gradient-strip {
-        height:20px;
-        width:92px;
+        height:23px;
+        width:225px;
         position: relative;
-        margin-top:60px;
+        margin-top:129px;
         margin-left:-2px;
         font-size:16px;
         padding-top:5px;
@@ -611,8 +627,9 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         font-style: italic;
     }
 
-    .front-page-shift { height:8px !important; margin-top:52px !important; }
-  
+    .front-page-shift { height:15px !important; margin-top:88px !important; }
+    
+    nav { padding:0px; width: 100%; height:50px; background:#fff; z-index:100; overflow: hidden; position:fixed !important; top:0px !important;}
     ul#nav-icon-list {
         list-style:none;
         width:100%;
@@ -623,23 +640,24 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     li.nav-icon { font-family: "proxima-nova-alt",sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 26px;
+        font-size: 20px;
         line-height:26px;
         color:#fff;
         list-style:none;
         float:right;
         display:inline-block;
         padding:7px 0 0 0px;
-        margin-left:50px;
-        margin-right:30px;
+        margin-left:20px;
+        margin-right:15px;
         margin-top:-3px;
         color: #488ee7;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
     }
+    #nav-crp-logo { margin-left:10px;}
     
     section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0; }
     
-    #projectList { width:720px; height:100%; margin-top:90px; margin-left: auto; margin-right:auto; }
+    #projectList { width:500px; height:100%; margin-top:80px !important; margin-left: auto; margin-right:auto; }
     /* BACK BONE CLASS */
     .project-wrap {
         height:153px;
@@ -647,35 +665,35 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         float:left;
         margin:0px 28px 25px 0;
     }
+    .project-wrap:nth-child(even) {margin-right:0px;}
+    .project-wrap:nth-child(odd) {margin-left:10px;}
 
-    
-    #nav-crp-logo { margin-left:30px;}
-
-    section#about-us { z-index:0; width:100%; }
+    section#about-us { z-index:0; width:100%; overflow-y:hidden !important; }
     
     #about-us-wrap {
-        width:700px;
-        height:500px;
+        width:500px;
+        height:300px;
         margin-left: auto; margin-right:auto;
-        margin-top:-230px;
+        top:60px;
+        margin-top:0px;
     }
 
-    #about-img-one, #about-img-two, #about-img-three { width:215px; height:134px; display:inline-block;}
+    #about-img-one, #about-img-two, #about-img-three { width:150px; height:93px; display:inline-block;}
 
     #about-img-one:first-child { margin-left:0px;}
 
     .about-us-text {
         clear:both;
         text-align:center;
-        width:700px;
+        width:500px;
         padding-top:30px;
         margin: 0 auto;
     }
 
  
-    footer { position:absolute; height:100px; width:700px; left:50%; margin-left:-350px; bottom:20px;  }
+    footer { position:absolute; height:150px; width:500px; left:50%; margin-left:-250px; bottom:20px;  }
     footer > p { margin-left:-50px;}
-    #contact-icons { width:443px; height:95px; margin:0 auto; clear:both; }
+    #contact-icons { width:443px; height:85px; margin:0 auto; clear:both; }
     .contact-png {
         height:65px;
         width:65px;
@@ -687,19 +705,28 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
     }
 
     .model-frame {
-        height:378px;
-        width:700px;
-        margin-top:-189px;
-        margin-left:-350px;
+        height:270px;
+        width:500px;
+        margin-top:-135px;
+        margin-left:-250px;
         border:4px solid #999;
     }
 
     .model-gradient {
         height:28px;
-        width:700px;
+        width:500px;
         padding-top:10px;
         font-size:23px;
         letter-spacing: 6px;
+    }
+    .close-button {
+        top:0px; right:0px;
+        margin-top:1px;
+        margin-right:1px;
+    }
+
+    .close-button:hover {
+        background-position: center -38px;
     }
 
     .fullArt {
@@ -728,7 +755,440 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
         height:230px;
         width:408px;
     }
+
 }
+
+
+@media only screen and (min-width : 360px) and (max-width : 500px) {
+    html, body { width:100%; }
+
+    .scrolling-element-class { overflow: auto; -webkit-overflow-scrolling: touch; }
+
+    .scrolling-element-class .child-element { position: relative; -webkit-transform: translate3d(0,0,0); }
+    
+    #gradBG { position: fixed; top:0px; left:0px; height:100%; width:100%; background:#2a4e7c !important;}
+
+    section#page-1 { z-index:1; width:100%; height: 300px !important; }
+
+    #page-1-wrapper {
+        width:310px;
+        height:130px;
+        top:70px; margin-top:0px;
+    }
+
+    #crp-logo {
+        padding: 0;
+        margin: 0;
+        width: 250px;
+        margin: 0 0px 0 27px;
+    }
+    #page-1-block {height:100px; width:100%; margin-top:20px;}
+    #page-1-theatrical, #page-1-homeEnt, #page-1-gaming,  #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img  {
+        height: 63px !important;
+        width:90px !important;
+    }
+    #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img {
+        margin-top: -65px !important ;
+    }
+    #page-1-theatrical > div, #page-1-homeEnt > div, #page-1-gaming > div {
+        width:92px !important;
+    }
+
+    .theatrical-box, .homeEnt-box, .gaming-box {
+        cursor:pointer;
+        display:inline-block;
+        white-space: nowrap;
+        margin-right:8px;
+        height:95px;
+        width:135px;
+        box-shadow:0px 2px 5px #000;
+        position: relative;
+        z-index:10;
+    }
+
+    .theatrical-box { border: 2px solid #1c4c81;  }
+    .homeEnt-box { border: 2px solid #184f55; }
+    .gaming-box { border: 2px solid #3b3e7c; }
+
+    .project-img {
+        height:95px;
+        width:135px;
+        border:0px;
+        position:absolute;
+        margin-top:-96px;
+    }
+
+    .gradient-strip {
+        height:16px;
+        width:137px;
+        position: relative;
+        margin-top:80px;
+        margin-left:-2px;
+        font-size:8px;
+        padding-top:0px;
+        letter-spacing: 2px;
+        font-style: italic;
+    }
+
+    .front-page-shift { height:8px !important; margin-top:57px !important; }
+    .addy {display:none;}
+    .mobile-addy { display:block; position: absolute; text-align: center; width:100%; line-height:14px;}
+  
+    nav { padding:0px; width: 100%; height:40px; background:#fff; z-index:100; overflow: hidden; position:fixed !important; top:0px !important;}
+    #nav-crp-logo { height:20px; margin-left:5px;  padding:0px;}
+    ul#nav-icon-list {
+        width:100%;
+        padding:15px 0px 0 0px;
+        height:15px;
+        overflow: hidden;
+    }
+    li.nav-icon { font-family: "proxima-nova-alt",sans-serif;
+        float:right;
+        font-size: 18px;
+        line-height:16px;
+        margin-right:10px;
+        margin-left:0px;
+        margin-top:-2px;
+        padding:0px;
+
+    }
+    
+    section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0; }
+    
+    #projectList { width:310px; height:100%; margin-top:40px !important; margin-left: auto; margin-right:auto; }
+    /* BACK BONE CLASS */
+    .project-wrap {
+        height:95px;
+        width:135px;
+        float:left;
+        margin:0px 20px 20px 0;
+    }
+    .project-wrap:nth-child(even) {margin-right:0px;}
+    .project-wrap:nth-child(odd) {margin-left:7px;}
+    
+    section#about-us { z-index:0; width:100%; min-height:480px !important; }
+    
+    #about-us-wrap {
+        width:310px;
+        height:330px;
+        margin-left: auto; margin-right:auto;
+        top:60px;
+        margin-top:0px;
+    }
+
+    #about-img-one, #about-img-two, #about-img-three { width:90px; height:56px; display:inline-block; border: 2px solid #c1c1c1 !important;}
+
+    #about-img-one:first-child { margin-left:0px;}
+
+    .about-us-text {
+        clear:both;
+        text-align:center;
+        width:300px;
+        padding-top:20px;
+        margin: 0 auto;
+        font-size:10px;
+        line-height:12px;
+    }
+    .about-us-bold-text { font-size:15px; line-height:17px;}
+ 
+    footer { position:relative; height:130px; width:310px; left:50%; margin-left:-155px; margin-top:50px; overflow:hidden; }
+    footer > p { margin-left:-50px;}
+    #contact-icons { width:310px; height:55px; margin:0 auto; clear:both; }
+    .contact-png {
+        height:45px;
+        width:45px;
+        margin:5px 5px;
+        position:relative;
+        display:inline-block;
+        background-repeat: no-repeat;
+        background-position:center top;
+    }
+
+    #mail-icon { background-image: url('../images/contact-mail-mob.png') }
+    #in-icon { background-image: url('../images/contact-in-mob.png') }
+    #vim-icon { background-image: url('../images/contact-vim-mob.png') }
+    #tw-icon { background-image: url('../images/contact-tw-mob.png') }
+    #fb-icon { background-image: url('../images/contact-fb-mob.png') }
+          
+    .contact-png:hover { background-position: center -45px; }
+    
+    .model-frame {
+        height:240px;
+        width:310px;
+        margin-top:-120px;
+        margin-left:-155px;
+        border:2px solid #999;
+    }
+
+    .model-gradient {
+        height:20px;
+        width:310px;
+        padding-top:3px;
+        font-size:12px;
+        letter-spacing: 6px;
+        margin-bottom:5px;
+    }
+
+    .close-button {
+        height:21px;
+        width: 20px;
+        margin-right:2px;
+        margin-top:1px;
+        background-image: url('../images/close-button-mob.png');
+    }
+
+    .close-button:hover {
+        background-position: center -38px;
+    }
+
+    .fullArt {
+        height: 118px;
+        width: 270px;
+    }
+
+    .model-left-arrow, .model-right-arrow {
+        height:22px;
+        width:15px;
+        background-image: url('../images/page-arrows-mob.png');
+        margin-top:60px;
+        margin-left:5px;
+    }
+
+    .model-right-arrow {
+        background-position: right top;   
+        margin-left:0px;
+    }
+
+    .model-text-block {
+        width: 300px;
+        height: 85px;
+        margin: 15px auto 0px auto;
+    }
+
+    .fullArt > video {
+        margin:2px 0 0 43px;
+        height:105px;
+        width:186px;
+    }
+}
+
+/* small phones */
+@media only screen and (max-width : 359px) {
+   
+    html, body { width:100%; min-width:310px;}
+
+    .scrolling-element-class { overflow: auto; -webkit-overflow-scrolling: touch; }
+
+    .scrolling-element-class .child-element { position: relative; -webkit-transform: translate3d(0,0,0); }
+    
+    #gradBG { position: fixed; top:0px; left:0px; height:100%; width:100%; background:#2a4e7c !important;}
+
+    section#page-1 { z-index:1; width:100%; }
+
+    #page-1-wrapper {
+        width:310px;
+        height:130px;
+        top:50%; margin-top:-70px;
+    }
+
+    #crp-logo {
+        padding: 0;
+        margin: 0;
+        width: 250px;
+        margin: 0 0px 0 27px;
+    }
+    #page-1-block {height:100px; width:100%; margin-top:20px;}
+    #page-1-theatrical, #page-1-homeEnt, #page-1-gaming,  #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img  {
+        height: 63px !important;
+        width:90px !important;
+    }
+    #page-1-theatrical > img, #page-1-homeEnt > img, #page-1-gaming > img {
+        margin-top: -65px !important ;
+    }
+    #page-1-theatrical > div, #page-1-homeEnt > div, #page-1-gaming > div {
+        width:92px !important;
+    }
+
+    .theatrical-box, .homeEnt-box, .gaming-box {
+        cursor:pointer;
+        display:inline-block;
+        white-space: nowrap;
+        margin-right:8px;
+        height:95px;
+        width:135px;
+        box-shadow:0px 2px 5px #000;
+        position: relative;
+        z-index:10;
+    }
+
+    .theatrical-box { border: 2px solid #1c4c81;  }
+    .homeEnt-box { border: 2px solid #184f55; }
+    .gaming-box { border: 2px solid #3b3e7c; }
+
+    .project-img {
+        height:95px;
+        width:135px;
+        border:0px;
+        position:absolute;
+        margin-top:-96px;
+    }
+
+    .gradient-strip {
+        height:16px;
+        width:137px;
+        position: relative;
+        margin-top:80px;
+        margin-left:-2px;
+        font-size:8px;
+        padding-top:0px;
+        letter-spacing: 2px;
+        font-style: italic;
+    }
+
+    .front-page-shift { height:8px !important; margin-top:57px !important; }
+    .addy {display:none;}
+    .mobile-addy { display:block; position: absolute; text-align: center; width:100%; line-height:14px;}
+  
+    nav { padding:0px; width: 100%; height:50px; background:#fff; z-index:100; overflow: hidden; position:fixed !important; top:0px !important;}
+    #nav-crp-logo { height:18px; margin-left:5px;  padding:0px;}
+    ul#nav-icon-list {
+        width:100%;
+        padding:20px 0px 0 0px;
+        height:15px;
+        overflow: hidden;
+    }
+    li.nav-icon { font-family: "proxima-nova-alt",sans-serif;
+        float:right;
+        font-size: 16px;
+        line-height:16px;
+        margin-right:8px;
+        margin-left:0px;
+        margin-top:-2px;
+        padding:0px;
+
+    }
+    
+    section#portfolio { z-index:0; width:100%; height:100%; padding-bottom:50px; margin:0; }
+    
+    #projectList { width:310px; height:100%; margin-top:60px !important; margin-left: auto; margin-right:auto; }
+    /* BACK BONE CLASS */
+    .project-wrap {
+        height:95px;
+        width:135px;
+        float:left;
+        margin:0px 20px 20px 0;
+    }
+    .project-wrap:nth-child(even) {margin-right:0px;}
+    .project-wrap:nth-child(odd) {margin-left:7px;}
+    
+    section#about-us { z-index:0; width:100%; min-height:480px !important; }
+    
+    #about-us-wrap {
+        width:310px;
+        height:330px;
+        margin-left: auto; margin-right:auto;
+        top:70px;
+        margin-top:0px;
+    }
+
+    #about-img-one, #about-img-two, #about-img-three { width:90px; height:56px; display:inline-block; border: 2px solid #c1c1c1 !important;}
+
+    #about-img-one:first-child { margin-left:0px;}
+
+    .about-us-text {
+        clear:both;
+        text-align:center;
+        width:300px;
+        padding-top:20px;
+        margin: 0 auto;
+        font-size:10px;
+        line-height:12px;
+    }
+    .about-us-bold-text { font-size:15px; line-height:17px;}
+ 
+    footer { position:relative; height:130px; width:310px; left:50%; margin-left:-155px; margin-top:50px; overflow:hidden; }
+    footer > p { margin-left:-50px;}
+    #contact-icons { width:310px; height:55px; margin:0 auto; clear:both; }
+    .contact-png {
+        height:45px;
+        width:45px;
+        margin:5px 5px;
+        position:relative;
+        display:inline-block;
+        background-repeat: no-repeat;
+        background-position:center top;
+    }
+
+    #mail-icon { background-image: url('../images/contact-mail-mob.png') }
+    #in-icon { background-image: url('../images/contact-in-mob.png') }
+    #vim-icon { background-image: url('../images/contact-vim-mob.png') }
+    #tw-icon { background-image: url('../images/contact-tw-mob.png') }
+    #fb-icon { background-image: url('../images/contact-fb-mob.png') }
+          
+    .contact-png:hover { background-position: center -45px; }
+    
+    .model-frame {
+        height:240px;
+        width:310px;
+        margin-top:-120px;
+        margin-left:-155px;
+        border:2px solid #999;
+    }
+
+    .model-gradient {
+        height:20px;
+        width:310px;
+        padding-top:3px;
+        font-size:12px;
+        letter-spacing: 6px;
+        margin-bottom:5px;
+    }
+
+    .close-button {
+        height:21px;
+        width: 20px;
+        margin-right:2px;
+        margin-top:1px;
+        background-image: url('../images/close-button-mob.png');
+    }
+
+    .close-button:hover {
+        background-position: center -38px;
+    }
+
+    .fullArt {
+        height: 118px;
+        width: 270px;
+    }
+
+    .model-left-arrow, .model-right-arrow {
+        height:22px;
+        width:15px;
+        background-image: url('../images/page-arrows-mob.png');
+        margin-top:60px;
+        margin-left:5px;
+    }
+
+    .model-right-arrow {
+        background-position: right top;   
+        margin-left:0px;
+    }
+
+    .model-text-block {
+        width: 300px;
+        height: 85px;
+        margin: 15px auto 0px auto;
+    }
+
+    .fullArt > video {
+        margin:2px 0 0 43px;
+        height:105px;
+        width:186px;
+    }
+}
+
+
+
 
 
 

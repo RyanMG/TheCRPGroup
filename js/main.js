@@ -1,7 +1,7 @@
-var $height = $(window).height(), // cache to save memory
-	body = document.body,
-	html = document.documentElement;
-var $bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( $height + 300 );
+var pageMeasure = { // cache to keep from recalculating except on resize
+	$height: $(window).height(), 
+	$bottom: 0
+};
 
 $(document).ready(function(){ 
 
@@ -23,17 +23,17 @@ $(document).ready(function(){
 		return false;		
 	}); // page link
 
-	$('#page-1').on('click touchstart', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
+	$('body').on('click doubletap', '#page-1-theatrical, #page-1-homeEnt, #page-1-gaming, #crp-logo', function(){
+ 	 		thisTop = ($(window).width() > 767) ? 'nav' : '#portfolio'; 
  	 		$('html, body').stop().animate({
-				scrollTop: $('nav').offset().top
+				scrollTop: $(thisTop).offset().top
 			}, 1000, 'easeOutCubic');
 		return false;			
 	});
 
-
     // BUILD ALL THESE INTO VIEW EVENTS AT SOME POINT
 
-						$('#portfolio').on('click touchstart', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
+						$('#portfolio').on('click doubletap', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
 							var $this = $(this).attr('rel');
 							$('#model-mask').fadeIn('800');
 							$('#model-backer').fadeIn('800');
@@ -254,10 +254,15 @@ function pauseVideos() { // pauses videos when switching pages
 
 
 $(window).scroll(function(){
+	if (!pageMeasure.$bottom) {
+	 	var body = document.body,
+			html = document.documentElement;
+		pageMeasure.$bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( pageMeasure.$height + 300 );
+	};
 
 	var $scrollTop = $(window).scrollTop();
 
-	if ($scrollTop > $height) {
+	if ($scrollTop > pageMeasure.$height-1) {
 		$('nav').css({position: 'fixed', top: '0px'});
 		$('#projectList').css({marginTop: '90px'});
 	} else {
@@ -266,13 +271,13 @@ $(window).scroll(function(){
 	}
 
 	// update navigation
-	if ($scrollTop > ($height-100) && $scrollTop < $bottom  ) { // portfolio
+	if ($scrollTop > (pageMeasure.$height-100) && $scrollTop < pageMeasure.$bottom  ) { // portfolio
  		$('#about-link').css({'border-bottom': '0px'});	
 	 	$('#port-link').last().css({'border-bottom': '3px solid #488ee7'});
-	} else if ($scrollTop <= $height) { // top
+	} else if ($scrollTop <= pageMeasure.$height) { // top
  		$('#about-link').css({'border-bottom': '0px'});
 	 	$('#port-link').css({'border-bottom': '0px'});
-	} else if ($scrollTop >= $bottom) { // about us
+	} else if ($scrollTop >= pageMeasure.$bottom) { // about us
  		$('#about-link').css({'border-bottom': '3px solid #488ee7'});
 	 	$('#port-link').css({'border-bottom': '0px'});
 	}
@@ -280,10 +285,15 @@ $(window).scroll(function(){
 
 $(window).resize(function() {
 
-		$('#page-1').css({ height: $(window).height(), width: $(window).width() });
-		$('#portfolio').css({ width: $(window).width() });
-		$('#about-us').css({ height: $(window).height(), width: $(window).width() });
-	$height = $(window).height();
+	$('#page-1').css({ height: $(window).height(), width: $(window).width() });
+	$('#portfolio').css({ width: $(window).width() });
+	$('#about-us').css({ height: $(window).height(), width: $(window).width() });
+
+	pageMeasure.$height = $(window).height(); // reset for scrolling
+ 	var body = document.body,
+		html = document.documentElement;
+	pageMeasure.$bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( pageMeasure.$height + 300 );
+
 });
 
 function aboutUsCycle() {
