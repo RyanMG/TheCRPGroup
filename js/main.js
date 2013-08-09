@@ -33,20 +33,6 @@ $(document).ready(function(){
 
     // BUILD ALL THESE INTO VIEW EVENTS AT SOME POINT
 
-						$('#portfolio').on('click doubletap', '.theatrical-box, .homeEnt-box, .gaming-box', function(){
-							var $this = $(this).attr('rel');
-							$('#model-mask').fadeIn('800');
-							$('#model-backer').fadeIn('800');
-							$('.model-frame[rel="' + $this +'"]').fadeIn('800');
-							return false;		
-						});
-
-						$('body').on('click touchstart','#model-mask, .close-button', function() {
-							$('.model-frame').fadeOut('500');
-							$('#model-backer').fadeOut('800');
-							$('#model-mask').fadeOut('500');
-							return false;
-						});
 
 						$('body').on('click touchstart', '.poster, .videoClicker', function(){
 							var $this = ($(this).hasClass('fullArt')) ? $(this): $(this).parent();
@@ -82,7 +68,6 @@ $(document).ready(function(){
 						});
 
 						$('body').on('click touchstart', '.model-right-arrow', function(){
-							console.log('test2');
 							var $this = $(this).parent();
 							var id = parseInt($(this).parent().attr('rel'));
 							if (id === lastProject) { 
@@ -122,12 +107,22 @@ $(document).ready(function(){
 	  var ProjectModelView = Backbone.View.extend({
 	  	tagName: "div",
 	  	className: "model-wrap",
+	  	events: {
+	  		'click .close-button' : 'closeModel',
+	  		'touchstart .close-button' : 'closeModel'
+	  	},
 	  	initialize: function() {
 	  		this.template = _.template($(this.options.templ).html());
 	  	},
 	  	render: function(){
+	  		$('#model-mask').on('click touchstart', this.closeModel);
 	  		this.$el.html(this.template(this.model.toJSON()));
 	  		return this;
+	  	},
+	  	closeModel: function(){
+			$('.model-frame').fadeOut('500');
+			$('#model-mask').fadeOut('500');
+	 		return false;
 	  	}
 	  });
 
@@ -140,8 +135,19 @@ $(document).ready(function(){
 	    render: function () {
 	        this.$el.html(this.template(this.model.toJSON()));
 	        return this;
-	    }
+	    },
+	    events: {
+	    	'click .theatrical-box, .homeEnt-box, .gaming-box' : "openModel",
+	    	'doubletap .theatrical-box, .homeEnt-box, .gaming-box' : "openModel"
+	    },
+	    openModel: function() {
+	    	var $this = this.$el.find('div').attr('rel');
+			$('#model-mask').fadeIn('800');
+			$('.model-frame[rel="' + $this +'"]').fadeIn('800');
+			return false;		
+		},
 	  });
+
  	 
  	  var ProjectModelListView = Backbone.View.extend({
 	  	el: '#modelList',
