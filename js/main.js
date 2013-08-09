@@ -31,60 +31,6 @@ $(document).ready(function(){
 		return false;			
 	});
 
-    // BUILD ALL THESE INTO VIEW EVENTS AT SOME POINT
-
-
-						$('body').on('click touchstart', '.poster, .videoClicker', function(){
-							var $this = ($(this).hasClass('fullArt')) ? $(this): $(this).parent();
-							var $that = $this.parent().find('.video');
-							if ($this.hasClass('poster')) {
-								$this.css({'display': 'none'});
-								$that.css({'display': 'block'});
-								$that.children().get(1).play();
-							} else if ($this.hasClass('video') && !$that.children().get(1).paused) {
-								$that.children().get(1).pause();
-							} else {
-								$that.children().get(1).play();
-							}
-							return false;
-						});
-
-						$('body').on('click touchstart', '.model-left-arrow', function(){
-							var $this = $(this).parent();
-							var id = parseInt($(this).parent().attr('rel'));
-							if (id === 1) { 
-								id = lastProject;
-								$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-									$($this).hide();
-								});
-
-							} else {
-								id--;
-								$('.model-frame[rel="' + id +'"]').show();
-								$($this).fadeOut('1500');
-							}
-							pauseVideos();
-							return false;		
-						});
-
-						$('body').on('click touchstart', '.model-right-arrow', function(){
-							var $this = $(this).parent();
-							var id = parseInt($(this).parent().attr('rel'));
-							if (id === lastProject) { 
-								id = 1;
-								$('.model-frame[rel="' + id +'"]').show();
-								$($this).fadeOut('1500');
-
-							} else {
-								id++;
-								$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-									$($this).hide();
-								});
-							}
-							pauseVideos();
-							return false;		
-						});
-
 	// BACKBONE 
 
 	 var masterProjectList, lastProject;
@@ -109,7 +55,13 @@ $(document).ready(function(){
 	  	className: "model-wrap",
 	  	events: {
 	  		'click .close-button' : 'closeModel',
-	  		'touchstart .close-button' : 'closeModel'
+	  		'touchstart .close-button' : 'closeModel',
+	  		'click .model-left-arrow' : 'pageLeft',
+	  		'touchstart .model-left-arrow' : 'pageLeft',
+	  		'click .model-right-arrow' : 'pageRight',
+	  		'touchstart .model-right-arrow' : 'pageRight',
+	  		'click .poster, .videoClicker' : 'clickToPlayVideo',
+	  		'touchstart .poster, .videoClicker' : 'clickToPlayVideo'
 	  	},
 	  	initialize: function() {
 	  		this.template = _.template($(this.options.templ).html());
@@ -123,7 +75,64 @@ $(document).ready(function(){
 			$('.model-frame').fadeOut('500');
 			$('#model-mask').fadeOut('500');
 	 		return false;
-	  	}
+	  	},
+	  	pageLeft: function(){
+			var $this = this.$el.find('.model-frame');
+			var id = parseInt($this.attr('rel'));
+			if (id === 1) { 
+				id = lastProject;
+				$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+					$($this).hide();
+				});
+
+			} else {
+				id--;
+				$('.model-frame[rel="' + id +'"]').show();
+				$($this).fadeOut('1500');
+			}
+			this.pauseVideos();
+			return false;		
+	  	},
+	  	pageRight: function() {
+			var $this = this.$el.find('.model-frame');
+			var id = parseInt($this.attr('rel'));
+			if (id === lastProject) { 
+				id = 1;
+				$('.model-frame[rel="' + id +'"]').show();
+				$($this).fadeOut('1500');
+
+			} else {
+				id++;
+				$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+					$($this).hide();
+				});
+			}
+			this.pauseVideos();
+			return false;		
+	  	},
+	  	pauseVideos: function() { // pauses videos when switching pages
+			$('video').each(function(){
+				if (!this.paused) {
+					this.pause();	
+				}
+			});
+		},
+		clickToPlayVideo: function(e){
+			var $target = $(e.target);
+			console.log($target);
+			var $this = ($target.hasClass('fullArt')) ? $target : $target.parent();
+			var $that = $this.parent().find('.video');
+			if ($this.hasClass('poster')) {
+				$this.css({'display': 'none'});
+				$that.css({'display': 'block'});
+				$that.children().get(1).play();
+			} else if ($this.hasClass('video') && !$that.children().get(1).paused) {
+				$that.children().get(1).pause();
+			} else {
+				$that.children().get(1).play();
+			}
+			return false;
+		}
 	  });
 
   	  var ProjectView = Backbone.View.extend({
@@ -148,7 +157,6 @@ $(document).ready(function(){
 		},
 	  });
 
- 	 
  	  var ProjectModelListView = Backbone.View.extend({
 	  	el: '#modelList',
 	    initialize: function() {
@@ -249,15 +257,6 @@ function pageOneCycle(data) {
 		}, 3000);
 	};
 }
-
-function pauseVideos() { // pauses videos when switching pages
-	$('video').each(function(){
-		if (!this.paused) {
-			this.pause();	
-		}
-	});
-}
-
 
 $(window).scroll(function(){
 	if (!pageMeasure.$bottom) {
