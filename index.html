@@ -13,6 +13,11 @@
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <!--[if IE 8]>
+      <style>
+        .project-wrap { margin:15px 22px 15px 0; } /* stupid IE8 */
+      </style>
+    <![endif]-->
 
     <style type="text/css">
         /* Hide the fonts while loading */
@@ -33,7 +38,9 @@
 
       <section id="page-1" class="scrolling-element-class">
         <div id="page-1-wrapper">
-          <img src="images/crp-logo.svg" id="crp-logo" alt="CRP Logo" >
+            <!--[if gte IE 9]><!--> <img src="images/crp-logo.svg" id="crp-logo" alt="CRP Logo" ><!--<![endif]-->
+            <!--[if lt IE 9]> <img src="images/crp-logo.png" id="crp-logo" alt="CRP Logo" ><![endif]-->
+          
           <div id="page-1-block">
               <div id="page-1-theatrical" class="theatrical-box">
                 <div class="gradient-strip theatrical front-page-shift"></div>
@@ -61,7 +68,10 @@
 
       <nav class="scrolling-element-class"> 
         <ul id="nav-icon-list">
-          <li><img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1" alt="CRP Logo"></li>
+          <li>
+            <!--[if gte IE 9]><!--> <img src="images/crp-logo-blue.svg" id="nav-crp-logo" class="nav-icon" rel="#page-1" alt="CRP Logo"><!--<![endif]-->
+            <!--[if lt IE 9]> <img src="images/crp-logo-blue.png" id="nav-crp-logo" class="nav-icon" style="margin-top: -5px;" rel="#page-1" alt="CRP Logo"><![endif]-->
+          </li>
           <li class="nav-icon" id="about-link" rel="#about-us">ABOUT</li>
           <li class="nav-icon" id="port-link" rel="#portfolio">PORTFOLIO</li>
         </ul>
@@ -108,7 +118,7 @@
     <script id="projectTemplate" type="text/template">
       <div class="<%= projectCode %>-box" rel="<%= id %>">
           <div class="gradient-strip <%= projectCode %>" ><%= projectType %></div>
-          <img src=<%= mainImg %> alt="<%= title &>" class="project-img">
+          <img src="<%= mainImg %>" alt="<%= title %>" class="project-img">
       </div>
     </script>
 
@@ -144,6 +154,7 @@
             <source src="<%= fullImg %>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
             <source src="<%= fullImg %>.webm" type='video/webm; codecs="vp8, vorbis"' />
             <source src="<%= fullImg %>.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <img src="images/gallery-vid/browser-fail.jpg" title="Your browser does not support the <video> tag">
           </video>
         </div>
         <a class="model-right-arrow"></a>
