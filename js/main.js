@@ -28,17 +28,17 @@ $(document).ready(function(){
  	 		$('html, body').stop().animate({
 				scrollTop: $(thisTop).offset().top
 			}, 1000, 'easeOutCubic');
-		return false;			
+		return false;
 	});
 
 	// BACKBONE 
 
 	 var masterProjectList, lastProject;
 	  $.getJSON('source/masterProjectList.json', function(data) {
-	  	  lastProject = parseInt(data[data.length - 1]['id']); // get ID of last project
-	      masterProjectList = new ProjectList(data);
-	      var masterListing = new ProjectListView();
-          var masterModelListing = new ProjectModelListView();
+		lastProject = parseInt(data[data.length - 1]['id']); // get ID of last project
+		masterProjectList = new ProjectList(data);
+		var masterListing = new ProjectListView();
+		var masterModelListing = new ProjectModelListView();
 	      pageOneCycle(data);
 	  });
 
@@ -119,7 +119,6 @@ $(document).ready(function(){
 		},
 		clickToPlayVideo: function(e){
 			var $target = $(e.target);
-			console.log($target);
 			var $this = ($target.hasClass('fullArt')) ? $target : $target.parent();
 			var $that = $this.parent().find('.video');
 			if ($this.hasClass('poster')) {
@@ -154,7 +153,7 @@ $(document).ready(function(){
 			$('#model-mask').fadeIn('800');
 			$('.model-frame[rel="' + $this +'"]').fadeIn('800');
 			return false;		
-		},
+		}
 	  });
 
  	  var ProjectModelListView = Backbone.View.extend({
@@ -181,7 +180,6 @@ $(document).ready(function(){
 	    }
 	  });
 
-
 	  var ProjectListView = Backbone.View.extend({
 	  	el: '#projectList',
 	    initialize: function() {
@@ -199,7 +197,6 @@ $(document).ready(function(){
 	      this.$el.append(projectView.render().el);
 	    }
 	  });
-
 
 });// doc ready
 
