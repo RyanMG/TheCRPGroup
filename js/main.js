@@ -118,9 +118,6 @@ $(document).ready(function(){
 			});
 		},
 		clickToPlayVideo: function(e){
-			function(video){
-				if
-			}
 			var $target = $(e.target);
 			var $this = ($target.hasClass('fullArt')) ? $target : $target.parent();
 			var $that = $this.parent().find('.video');

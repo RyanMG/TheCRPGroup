@@ -228,7 +228,7 @@ section#about-us { z-index:0; height:100%; width:100%; }
 }
 
 footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-512px; bottom:25px; }
-#contact-icons { width:443px; height:95px; margin:0 auto 0 auto; clear:both; }
+#contact-icons { width:290px; height:95px; margin:0 auto 0 auto; clear:both; }
 .contact-png {
     height:65px;
     width:65px;
@@ -242,9 +242,10 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
 #mail-icon { background-image: url('../images/contact-mail.png') }
 #in-icon { background-image: url('../images/contact-in.png') }
 #vim-icon { background-image: url('../images/contact-vim.png') }
+/*
 #tw-icon { background-image: url('../images/contact-tw.png') }
 #fb-icon { background-image: url('../images/contact-fb.png') }
-
+*/
 .contact-png:hover { background-position: center -65px; }
 
 /* MODEL WINDOW */
@@ -503,7 +504,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
  
     footer { position:absolute; height:100px; width:700px; left:50%; margin-left:-350px; bottom:20px;  }
     footer > p { margin-left:-50px;}
-    #contact-icons { width:443px; height:95px; margin:0 auto; clear:both; }
+    #contact-icons { width:290px; height:95px; margin:0 auto; clear:both; }
     .contact-png {
         height:65px;
         width:65px;
@@ -705,7 +706,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
  
     footer { position:absolute; height:150px; width:500px; left:50%; margin-left:-250px; bottom:20px;  }
     footer > p { margin-left:-50px;}
-    #contact-icons { width:443px; height:85px; margin:0 auto; clear:both; }
+    #contact-icons { width:290px; height:85px; margin:0 auto; clear:both; }
     .contact-png {
         height:65px;
         width:65px;
@@ -911,7 +912,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
  
     footer { position:relative; height:130px; width:310px; left:50%; margin-left:-155px; margin-top:50px; overflow:hidden; }
     footer > p { margin-left:-50px;}
-    #contact-icons { width:310px; height:55px; margin:0 auto; clear:both; }
+    #contact-icons { width:190px; height:55px; margin:0 auto; clear:both; }
     .contact-png {
         height:45px;
         width:45px;
@@ -1132,7 +1133,7 @@ footer { position:absolute; height:100px; width:1024px;left:50%; margin-left:-51
  
     footer { position:relative; height:130px; width:310px; left:50%; margin-left:-155px; margin-top:50px; overflow:hidden; }
     footer > p { margin-left:-50px;}
-    #contact-icons { width:310px; height:55px; margin:0 auto; clear:both; }
+    #contact-icons { width:190px; height:55px; margin:0 auto; clear:both; }
     .contact-png {
         height:45px;
         width:45px;
