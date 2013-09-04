@@ -232,8 +232,8 @@ function pageOneCycle(data) {
 		setTimeout(function(){
 			(theatPos < (theatArray.length-1)) ? theatPos+=1 : theatPos = 0;
 			$('#page-1-theatrical').append("<img src='" + theatArray[theatPos] + "' class='project-img' style='display:none'>");
-			$('#page-1-theatrical img:last-child').fadeIn(1500, function(){
-				$('#page-1-theatrical img:first').remove();
+			$('#page-1-theatrical > img:last').fadeTo(1500, 1, function(){
+				$('#page-1-theatrical > img:first').remove();
 			});
 			cycleHomeEnt();
 		}, 3000);
@@ -242,8 +242,8 @@ function pageOneCycle(data) {
 		setTimeout(function(){
 			(homeEntPos < (homeEntArray.length-1)) ? homeEntPos+=1 : homeEntPos = 0;
 			$('#page-1-homeEnt').append("<img src='" + homeEntArray[homeEntPos] + "' class='project-img' style='display:none'>");
-			$('#page-1-homeEnt img:last-child').fadeIn(1500, function(){
-				$('#page-1-homeEnt img:first').remove();
+			$('#page-1-homeEnt img:last').fadeTo(1500, 1, function(){
+				$('#page-1-homeEnt > img:first').remove();
 			});
 			cycleGaming();
 		}, 3000);
@@ -252,8 +252,8 @@ function pageOneCycle(data) {
 		setTimeout(function(){
 			(gamingPos < (gamingArray.length-1)) ? gamingPos+=1 : gamingPos = 0;
 			$('#page-1-gaming').append("<img src='" + gamingArray[gamingPos] + "' class='project-img' style='display:none'>");
-			$('#page-1-gaming img:last-child').fadeIn(1500, function(){
-				$('#page-1-gaming img:first').remove();
+			$('#page-1-gaming img:last').fadeTo(1500, 1, function(){
+				$('#page-1-gaming > img:first').remove();
 			});
 			cycleTheatrical();
 		}, 3000);
@@ -305,7 +305,6 @@ $(window).resize(function() {
 
 function aboutUsCycle() {
 	var onePos = 0, twoPos = 0, threePos = 0;
-
 	$('#about-img-one').children('img').attr('src', img1Array[0]);
 	$('#about-img-two').children('img').attr('src', img2Array[0]);
 	$('#about-img-three').children('img').attr('src', img3Array[0]);
@@ -315,7 +314,7 @@ function aboutUsCycle() {
 		setTimeout(function(){
 			(onePos < (img1Array.length-1)) ? onePos += 1 : onePos = 0;
 			$('#about-img-one').append("<img src='" + img1Array[onePos] + "' style='display:none'>");
-			$('#about-img-one img:last-child').fadeIn(1500, function(){
+			$('#about-img-one img:last-child').fadeTo(1500, 1, function(){
 				$('#about-img-one img:first').remove();
 			});
 			cycleTwo();
@@ -325,7 +324,7 @@ function aboutUsCycle() {
 		setTimeout(function(){
 			(twoPos < (img2Array.length-1)) ? twoPos += 1 : twoPos = 0;
 			$('#about-img-two').append("<img src='" + img2Array[twoPos] + "' style='display:none'>");
-			$('#about-img-two img:last-child').fadeIn(1500, function(){
+			$('#about-img-two img:last-child').fadeTo(1500, 1, function(){
 				$('#about-img-two img:first').remove();
 			});
 			cycleThree();
@@ -335,7 +334,7 @@ function aboutUsCycle() {
 		setTimeout(function(){
 			(threePos < (img3Array.length-1)) ? threePos += 1 : threePos = 0;
 			$('#about-img-three').append("<img src='" + img3Array[threePos] + "' style='display:none'>");
-			$('#about-img-three img:last-child').fadeIn(1500, function(){
+			$('#about-img-three img:last-child').fadeTo(1500, 1, function(){
 				$('#about-img-three img:first').remove();
 			});
 			cycleOne();
