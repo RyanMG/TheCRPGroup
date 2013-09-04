@@ -1,3 +1,8 @@
+// ABOUT US IMAGES ARE LISTED BELOW
+var img1Array = ['images/gallery-about/about-1-1.jpg','images/gallery-about/about-1-2.jpg','images/gallery-about/about-1-3.jpg'],
+	img2Array = ['images/gallery-about/about-2-1.jpg','images/gallery-about/about-2-2.jpg','images/gallery-about/about-2-3.jpg'],
+	img3Array = ['images/gallery-about/about-3-1.jpg','images/gallery-about/about-3-2.jpg','images/gallery-about/about-3-3.jpg'];
+
 var pageMeasure = { // cache to keep from recalculating except on resize
 	$height: $(window).height(), 
 	$bottom: 0
@@ -299,35 +304,40 @@ $(window).resize(function() {
 });
 
 function aboutUsCycle() {
-	var img1Array = ['images/gallery-about/about-1-1.jpg'];
-	var img2Array = ['images/gallery-about/about-2-1.jpg'];
-	var img3Array = ['images/gallery-about/about-3-1.jpg'];
 	var onePos = 0, twoPos = 0, threePos = 0;
 
-
-	$('#about-img-one').attr('src', img1Array[0]);
-	$('#about-img-two').attr('src', img2Array[0]);
-	$('#about-img-three').attr('src', img3Array[0]);
+	$('#about-img-one').children('img').attr('src', img1Array[0]);
+	$('#about-img-two').children('img').attr('src', img2Array[0]);
+	$('#about-img-three').children('img').attr('src', img3Array[0]);
 	cycleOne();
 
 	function cycleOne(){
 		setTimeout(function(){
 			(onePos < (img1Array.length-1)) ? onePos += 1 : onePos = 0;
-			$('#about-img-one').attr('src', img1Array[onePos]);
+			$('#about-img-one').append("<img src='" + img1Array[onePos] + "' style='display:none'>");
+			$('#about-img-one img:last-child').fadeIn(1500, function(){
+				$('#about-img-one img:first').remove();
+			});
 			cycleTwo();
 		}, 3000);
 	};
 	function cycleTwo(){
 		setTimeout(function(){
 			(twoPos < (img2Array.length-1)) ? twoPos += 1 : twoPos = 0;
-			$('#about-img-two').attr('src', img2Array[twoPos]);
+			$('#about-img-two').append("<img src='" + img2Array[twoPos] + "' style='display:none'>");
+			$('#about-img-two img:last-child').fadeIn(1500, function(){
+				$('#about-img-two img:first').remove();
+			});
 			cycleThree();
 		}, 3000);
 	};
 	function cycleThree(){
 		setTimeout(function(){
 			(threePos < (img3Array.length-1)) ? threePos += 1 : threePos = 0;
-			$('#about-img-three').attr('src', img3Array[threePos]);
+			$('#about-img-three').append("<img src='" + img3Array[threePos] + "' style='display:none'>");
+			$('#about-img-three img:last-child').fadeIn(1500, function(){
+				$('#about-img-three img:first').remove();
+			});
 			cycleOne();
 		}, 3000);
 	};
