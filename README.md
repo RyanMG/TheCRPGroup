@@ -9,3 +9,7 @@ It was important that the site be clean, follow the company's branding and voice
 A good amount of time was also spent working with CSS media queries to keep the site responsive and looking clean on all types of mobile devices.
 
 As part of an upcomig update, I am working to transfer the project data from being served via JSON to being persisted and served by a MySQL database, with a simple client facing interface for handling the adding, editing and removing projects.
+
+##Screenshots
+
+![Example Screen Shots](https://github.com/RyanMG/TheCRPGroup/blob/master/example_screens.jpg?raw=true "Example screen shots")
