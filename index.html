@@ -149,13 +149,13 @@
         <div class="close-button"></div>
 
         <a class="model-left-arrow"></a>
-        <img class="fullArt poster" src='images/gallery-vid/mgrr-full.jpg' alt="<%= title %>" />
+        <img class="fullArt poster" src='images/gallery-vid/<%= vidTitle %>.jpg' alt="<%= title %>" />
         <div class="fullArt video" style="display:none">
           <div class="videoClicker"></div>
           <video controls>
-            <source src="<%= fullImg %>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-            <source src="<%= fullImg %>.webm" type='video/webm; codecs="vp8, vorbis"' />
-            <source src="<%= fullImg %>.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <source src="images/gallery-vid/<%= vidTitle %>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="images/gallery-vid/<%= vidTitle %>.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="images/gallery-vid/<%= vidTitle %>.ogv" type='video/ogg; codecs="theora, vorbis"' />
             <img src="images/gallery-vid/browser-fail.jpg" title="Your browser does not support the <video> tag">
           </video>
         </div>
@@ -174,7 +174,8 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
   <script src="js/plugins.min.js"></script>
-  <script src="js/main.min.js"></script>
+  <script src="source/list.js"></script>
+  <script src="js/_unminified_source/main.js"></script>
 
   <!-- serve fonts last, since it takes a god awful amount of time --> 
   <script type="text/javascript" src="//use.typekit.net/pef6tbk.js"></script>

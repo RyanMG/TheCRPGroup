@@ -13,10 +13,16 @@ $(document).ready(function(){
   aboutUsCycle(); // initiate the page cycling on About Us
 
   $('#content-wrapper').css('display','block');
+  	if ( $(window).height() > 580 ) {
+  		$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
+		$('#portfolio').css({ minHeight: $(window).height(), width: $(window).width() }); 
+		$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
+	} else {
+		$('#page-1').css({ height: '580px', width: $(window).width() }); 
+		$('#portfolio').css({ minHeight: '580px', width: $(window).width() }); 
+		$('#about-us').css({ height: '580px', width: $(window).width() }); 
 
-	$('#page-1').css({ height: $(window).height(), width: $(window).width() }); 
-	$('#portfolio').css({ minHeight: $(window).height(), width: $(window).width() }); 
-	$('#about-us').css({ height: $(window).height(), width: $(window).width() }); 
+	}	
 
 	// UI click to scroll to
 	$('nav').on('click touchstart', '.nav-icon', function(event) {
@@ -37,15 +43,6 @@ $(document).ready(function(){
 	});
 
 	// BACKBONE 
-
-	 var masterProjectList, lastProject;
-	  $.getJSON('source/masterProjectList.json', function(data) {
-		lastProject = parseInt(data[data.length - 1]['id']); // get ID of last project
-		masterProjectList = new ProjectList(data);
-		var masterListing = new ProjectListView();
-		var masterModelListing = new ProjectModelListView();
-	      pageOneCycle(data);
-	  });
 
 	  var Project = Backbone.Model.extend({
 	    defaults: { }
@@ -77,66 +74,69 @@ $(document).ready(function(){
 	  		return this;
 	  	},
 	  	closeModel: function(){
-	  		this.pauseVideos();
+	  	  $('video').each(function(){
+				  this.pause();	
+			  });
 			  $('.model-frame').fadeOut('500');
 			  $('#model-mask').fadeOut('500');
 	 		  return false;
 	  	},
 	  	pageLeft: function(){
-			  var $this = this.$el.find('.model-frame');
-			  var id = parseInt($this.attr('rel'));
-			  if (id === 1) { 
-				  id = lastProject;
-				  $('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-					  $($this).hide();
-				  });
+			var $this = this.$el.find('.model-frame');
+			var id = parseInt($this.attr('rel'));
+			if (id === 1) { 
+				id = lastProject;
+				$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+					$($this).hide();
+				});
 
-			  } else {
-				  id--;
-				  $('.model-frame[rel="' + id +'"]').show();
-				  $($this).fadeOut('1500');
-			  }
-			  this.pauseVideos();
-			  return false;		
+			} else {
+				id--;
+				$('.model-frame[rel="' + id +'"]').show();
+				$($this).fadeOut('1500');
+			}
+			this.pauseVideos();
+			return false;		
 	  	},
 	  	pageRight: function() {
-			  var $this = this.$el.find('.model-frame');
-			  var id = parseInt($this.attr('rel'));
-			  if (id === lastProject) { 
-				  id = 1;
-				  $('.model-frame[rel="' + id +'"]').show();
-				  $($this).fadeOut('1500');
-			  } else {
-				  id++;
-				  $('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
-					  $($this).hide();
-				  });
-			  }
-			  this.pauseVideos();
-			  return false;		
+			var $this = this.$el.find('.model-frame');
+			var id = parseInt($this.attr('rel'));
+			if (id === lastProject) { 
+				id = 1;
+				$('.model-frame[rel="' + id +'"]').show();
+				$($this).fadeOut('1500');
+
+			} else {
+				id++;
+				$('.model-frame[rel="' + id +'"]').fadeIn('1500', function(){
+					$($this).hide();
+				});
+			}
+			this.pauseVideos();
+			return false;		
 	  	},
 	  	pauseVideos: function() { // pauses videos when switching pages
-			  $('video').each(function(){
-				  if (!this.paused) {
-					  this.pause();	
-				  }
-			  });
-		  },
-		  clickToPlayVideo: function(e){
-			  var $target = $(e.target);
-			  var $this = ($target.hasClass('fullArt')) ? $target : $target.parent();
-			  var $that = $this.parent().find('.video');
-			  if ($this.hasClass('poster')) {
-				  $this.css({'display': 'none'});
-				  $that.css({'display': 'block'});
-				  $that.children().get(1).play();
-			  } else if ($this.hasClass('video') && !$that.children().get(1).paused) {
-				  $that.children().get(1).pause();
-			  } else {
-				  $that.children().get(1).play();
-			  }
-			  return false;
-		  }
+			$('video').each(function(){
+				if (!this.paused) {
+					this.pause();	
+				}
+			});
+		},
+		clickToPlayVideo: function(e){
+			var $target = $(e.target);
+			var $this = ($target.hasClass('fullArt')) ? $target : $target.parent();
+			var $that = $this.parent().find('.video');
+			if ($this.hasClass('poster')) {
+				$this.css({'display': 'none'});
+				$that.css({'display': 'block'});
+				$that.children().get(1).play();
+			} else if ($this.hasClass('video') && !$that.children().get(1).paused) {
+				$that.children().get(1).pause();
+			} else {
+				$that.children().get(1).play();
+			}
+			return false;
+		}
 	  });
 
   	  var ProjectView = Backbone.View.extend({
@@ -202,6 +202,15 @@ $(document).ready(function(){
 	      this.$el.append(projectView.render().el);
 	    }
 	  });
+
+	  	 var masterProjectList, lastProject;
+	  console.log(x);
+		lastProject = parseInt(x[x.length - 1]['id']); // get ID of last project
+		masterProjectList = new ProjectList(x);
+		var masterListing = new ProjectListView();
+		var masterModelListing = new ProjectModelListView();
+	      pageOneCycle(x);
+
 
 });// doc ready
 
@@ -291,12 +300,22 @@ $(window).scroll(function(){
 });
 
 $(window).resize(function() {
+	var width = $(window).width(),
+		height = $(window).height(),
+		heightBreaker = 580;
 
-	$('#page-1').css({ height: $(window).height(), width: $(window).width() });
-	$('#portfolio').css({ width: $(window).width() });
-	$('#about-us').css({ height: $(window).height(), width: $(window).width() });
+		heightBreaker = (width < 1025) ? 420 : heightBreaker;
+  	if ( $(window).height() > heightBreaker ) {
+		$('#page-1').css({ height: height, width: width });
+		$('#portfolio').css({ width: width });
+		$('#about-us').css({ height: height, width: width });
+	} else {
+		$('#page-1').css({ height: '580px', width: width }); 
+		$('#portfolio').css({ minHeight: '580px', width: width }); 
+		$('#about-us').css({ height: '580px', width: width }); 
+	}
 
-	pageMeasure.$height = $(window).height(); // reset for scrolling
+	pageMeasure.$height = height; // reset for scrolling
  	var body = document.body,
 		html = document.documentElement;
 	pageMeasure.$bottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) - ( pageMeasure.$height + 300 );
@@ -340,6 +359,4 @@ function aboutUsCycle() {
 			cycleOne();
 		}, 3000);
 	};
-}
-
-
+};
